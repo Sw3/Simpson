@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SimpsonActivity">
+    tools:context="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity">
 
     <fragment
         android:id="@+id/fragmentoListaPersonajes"
-        class="co.edu.uniquindio.android.electiva.simpson.fragment.ListaDePersonajesFragment"
+        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.ListaDeServiciosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -6,13 +6,13 @@
     android:orientation="horizontal">
     <fragment
         android:id="@+id/fragmentoListaPersonajes"
-        class="co.edu.uniquindio.android.electiva.simpson.fragment.ListaDePersonajesFragment"
+        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.ListaDeServiciosFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="30" />
     <fragment
         android:id="@+id/fragmentoDetallePersonaje"
-        class="co.edu.uniquindio.android.electiva.simpson.fragment.DetalleDePersonajeFragment"
+        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.DetalleDeServicioFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="70"

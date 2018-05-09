@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.electiva.simpson.fragment
+package co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios
 
 
 import android.content.Intent
@@ -10,21 +10,21 @@ import android.view.View
 import android.view.ViewGroup
 
 import co.edu.uniquindio.android.electiva.simpson.R
-import co.edu.uniquindio.android.electiva.simpson.vo.Personaje
-import kotlinx.android.synthetic.main.fragment_detalle_de_personaje.*
+import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
+import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.*
 
 /**
  * Fragmento que muestra el detalle de un personaje
  * @author caflorezvi
  */
-class DetalleDePersonajeFragment : Fragment(), View.OnClickListener {
+class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
 
-    lateinit var personaje:Personaje
+    lateinit var personaje: Servicio
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalle_de_personaje, container, false)
+        return inflater.inflate(R.layout.fragment_detalle_de_servicio, container, false)
     }
 
     /**
@@ -38,7 +38,7 @@ class DetalleDePersonajeFragment : Fragment(), View.OnClickListener {
     /**
      * Obtiene los atributos de un personaje y los muestra en la pantalla
      */
-    fun darDetalle(personaje: Personaje) {
+    fun darDetalle(personaje: Servicio) {
         this.personaje = personaje
         txtTituloDetalle.text = personaje.nombre
         btnIrAVideo.setOnClickListener(this)

@@ -1,33 +1,29 @@
-package co.edu.uniquindio.android.electiva.simpson.util
+package co.edu.uniquindio.android.electiva.proyecto.util
 
-import android.content.Context
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import co.edu.uniquindio.android.electiva.simpson.vo.Personaje
-import kotlinx.android.synthetic.main.resumen_personaje.view.*
+import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
+import kotlinx.android.synthetic.main.resumen_servicio.view.*
 import co.edu.uniquindio.android.electiva.simpson.R
-import co.edu.uniquindio.android.electiva.simpson.activity.DetalleActivity
-import co.edu.uniquindio.android.electiva.simpson.fragment.ListaDePersonajesFragment
+import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.ListaDeServiciosFragment
 
 /**
  * Clase que representa el Adaptador para el recycler view de Personajes
  * @author caflorezvi
  */
-class AdaptadorDePersonaje(var personajes:ArrayList<Personaje>) : RecyclerView.Adapter<AdaptadorDePersonaje.PersonajeViewHolder>() {
+class AdaptadorDeServicio(var personajes:ArrayList<Servicio>) : RecyclerView.Adapter<AdaptadorDeServicio.PersonajeViewHolder>() {
 
-    lateinit var listener:OnClickAdaptadorDePersonaje
+    lateinit var listener: OnClickAdaptadorDePersonaje
 
-    constructor(fragmento:ListaDePersonajesFragment, personajes: ArrayList<Personaje>) : this(personajes){
+    constructor(fragmento: ListaDeServiciosFragment, personajes: ArrayList<Servicio>) : this(personajes){
         listener = fragmento
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): PersonajeViewHolder {
-        val v:View = LayoutInflater.from(parent?.context).inflate(R.layout.resumen_personaje, parent, false)
+        val v:View = LayoutInflater.from(parent?.context).inflate(R.layout.resumen_servicio, parent, false)
         return PersonajeViewHolder(v)
     }
 
@@ -52,7 +48,7 @@ class AdaptadorDePersonaje(var personajes:ArrayList<Personaje>) : RecyclerView.A
             listener.onClickPosition(adapterPosition)
         }
 
-        fun bindPersonaje(personaje:Personaje){
+        fun bindPersonaje(personaje: Servicio){
             nombre.text = personaje.nombre
             fechaNacimiento.text = personaje.fecha.toString()
         }

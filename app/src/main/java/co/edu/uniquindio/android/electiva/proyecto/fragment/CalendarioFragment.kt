@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.electiva.simpson.fragment
+package co.edu.uniquindio.android.electiva.proyecto.fragment
 
 import android.app.DatePickerDialog
 import android.app.Dialog
@@ -13,7 +13,7 @@ import java.util.*
  */
 class CalendarioFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
-    lateinit var listener:FechaSeleccionada
+    lateinit var listener: FechaSeleccionada
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 

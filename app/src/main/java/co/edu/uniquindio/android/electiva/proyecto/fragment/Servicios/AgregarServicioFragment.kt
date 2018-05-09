@@ -1,24 +1,25 @@
-package co.edu.uniquindio.android.electiva.simpson.fragment
+package co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios
 
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import co.edu.uniquindio.android.electiva.proyecto.fragment.CalendarioFragment
 import co.edu.uniquindio.android.electiva.simpson.R
-import co.edu.uniquindio.android.electiva.simpson.vo.Personaje
-import kotlinx.android.synthetic.main.fragment_agregar_personaje.view.*
+import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
+import kotlinx.android.synthetic.main.fragment_agregar_servicio.view.*
 import java.util.*
 
 /**
  * Fragmento de diálogo que muestra el formulario para crear un personaje nuevo
  * @author caflorezvi
  */
-class AgregarPersonajeFragment : DialogFragment(), View.OnClickListener, CalendarioFragment.FechaSeleccionada {
+class AgregarServicioFragment : DialogFragment(), View.OnClickListener, CalendarioFragment.FechaSeleccionada {
 
     lateinit var vista:View
     lateinit var fecha:Date
-    lateinit var listener:PersonajeCreado
+    lateinit var listener: PersonajeCreado
 
     /**
      * Método que devuelve la fecha seleccionada en el diálogo del calendario
@@ -29,12 +30,12 @@ class AgregarPersonajeFragment : DialogFragment(), View.OnClickListener, Calenda
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        vista = inflater?.inflate(R.layout.fragment_agregar_personaje, container, false)
+        vista = inflater?.inflate(R.layout.fragment_agregar_servicio, container, false)
 
         vista.calendario.setOnClickListener(this)
         vista.agregar_personaje.setOnClickListener(this)
 
-        dialog.setTitle("Agregar Personaje")
+        dialog.setTitle("Agregar Servicio")
         return vista
     }
 
@@ -54,7 +55,7 @@ class AgregarPersonajeFragment : DialogFragment(), View.OnClickListener, Calenda
 
             if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
 
-                var personaje = Personaje(nombre, fecha, "", descripcion, url)
+                var personaje = Servicio(nombre, fecha, "", descripcion, url)
                 listener.onPersonajeCreadoListener(personaje)
                 dismiss()
             }
@@ -67,7 +68,7 @@ class AgregarPersonajeFragment : DialogFragment(), View.OnClickListener, Calenda
      * Interface que sirve como listener para la creación de un personaje
      */
     interface PersonajeCreado{
-        fun onPersonajeCreadoListener(personaje: Personaje)
+        fun onPersonajeCreadoListener(personaje: Servicio)
     }
 
 }

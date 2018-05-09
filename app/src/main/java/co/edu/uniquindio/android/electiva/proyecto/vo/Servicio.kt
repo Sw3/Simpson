@@ -1,14 +1,14 @@
-package co.edu.uniquindio.android.electiva.simpson.vo
+package co.edu.uniquindio.android.electiva.proyecto.vo
 
 import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
 
 /**
- * Clase que representa un Personaje de tipo Parcelable
+ * Clase que representa un Servicio de tipo Parcelable
  * @author caflorezvi
  */
-class Personaje (var nombre:String, var fecha:Date) : Parcelable {
+class Servicio (var nombre:String, var fecha:Date) : Parcelable {
 
     var id:String = ""
     var descripcion:String = "Descripción"
@@ -44,12 +44,12 @@ class Personaje (var nombre:String, var fecha:Date) : Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Personaje> {
-        override fun createFromParcel(parcel: Parcel): Personaje {
-            return Personaje(parcel)
+    companion object CREATOR : Parcelable.Creator<Servicio> {
+        override fun createFromParcel(parcel: Parcel): Servicio {
+            return Servicio(parcel)
         }
 
-        override fun newArray(size: Int): Array<Personaje?> {
+        override fun newArray(size: Int): Array<Servicio?> {
             return arrayOfNulls(size)
         }
     }
