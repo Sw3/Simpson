@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.Menu
 import android.view.MenuItem
+import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.DetalleDeSolicitudFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.ListaDeSolicitudsFragment
@@ -43,9 +44,7 @@ class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSoli
 
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleSolicitud)
 
-        lista = ArrayList()
-        lista.add( Solicitud("Solicitud 1", Date()) )
-        lista.add( Solicitud("Solicitud 2", Date()) )
+        lista = Repository().ListSolicitudes()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaSolicituds) as ListaDeSolicitudsFragment

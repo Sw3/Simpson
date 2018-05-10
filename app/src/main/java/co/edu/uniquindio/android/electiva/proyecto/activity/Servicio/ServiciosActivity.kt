@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.Menu
 import android.view.MenuItem
+import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.DetalleDeServicioFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.ListaDeServiciosFragment
@@ -43,10 +44,7 @@ class ServiciosActivity : AppCompatActivity(), ListaDeServiciosFragment.OnServic
 
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleServicio)
 
-        lista = ArrayList()
-        lista.add( Servicio("Servicio 1", Date()) )
-        lista.add( Servicio("Servicio 2", Date()) )
-
+        lista = Repository().ListServicios()
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaServicios) as ListaDeServiciosFragment
         fragmentLista.lista = lista

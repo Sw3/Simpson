@@ -9,22 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity">
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.DetalleClienteActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.DetalleServicioActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.DetalleClienteActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity"/>
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.DetalleSolicitudActivity"/>
     </application>
-
     <uses-permission android:name="android.permission.INTERNET" />
-
 </manifest>

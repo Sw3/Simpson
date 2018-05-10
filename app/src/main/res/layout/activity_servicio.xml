@@ -10,5 +10,4 @@
         class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.ListaDeServiciosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </FrameLayout>
