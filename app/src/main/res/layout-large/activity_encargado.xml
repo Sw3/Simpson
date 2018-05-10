@@ -5,14 +5,14 @@
     android:baselineAligned="false"
     android:orientation="horizontal">
     <fragment
-        android:id="@+id/fragmentoListaServicios"
-        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.ListaDeServiciosFragment"
+        android:id="@+id/fragmentoListaEncargados"
+        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.ListaDeEncargadosFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="30" />
     <fragment
-        android:id="@+id/fragmentoDetalleServicio"
-        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.DetalleDeServicioFragment"
+        android:id="@+id/fragmentoDetalleEncargado"
+        class="co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.DetalleDeEncargadoFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="70"

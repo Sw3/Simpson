@@ -1,9 +1,9 @@
 package co.edu.uniquindio.android.electiva.proyecto.activity.Servicio
 
-import co.edu.uniquindio.android.electiva.simpson.R
+import co.edu.uniquindio.android.electiva.proyecto.R
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.DetalleDeServicioFragment
+import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.DetalleDeServicioFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 
 /**
@@ -16,9 +16,9 @@ class DetalleServicioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_servicio)
 
-        val personaje: Servicio = intent.getParcelableExtra("personaje") as Servicio
+        val servicio:Servicio = intent.getParcelableExtra("servicio") as Servicio
 
-        val fragmentoDetalle = supportFragmentManager.findFragmentById(R.id.fragmentoDetallePersonaje) as DetalleDeServicioFragment
-        fragmentoDetalle.darDetalle(personaje)
+        val fragmentoDetalle = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleServicio) as DetalleDeServicioFragment
+        fragmentoDetalle.darDetalle(servicio)
     }
 }

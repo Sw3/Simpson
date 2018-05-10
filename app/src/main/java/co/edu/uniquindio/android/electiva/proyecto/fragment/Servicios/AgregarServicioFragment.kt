@@ -1,25 +1,26 @@
-package co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios
+package co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio
 
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CalendarioFragment
-import co.edu.uniquindio.android.electiva.simpson.R
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import kotlinx.android.synthetic.main.fragment_agregar_servicio.view.*
+import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.view.*
 import java.util.*
 
 /**
- * Fragmento de diálogo que muestra el formulario para crear un personaje nuevo
+ * Fragmento de diálogo que muestra el formulario para crear un servicio nuevo
  * @author caflorezvi
  */
 class AgregarServicioFragment : DialogFragment(), View.OnClickListener, CalendarioFragment.FechaSeleccionada {
 
     lateinit var vista:View
     lateinit var fecha:Date
-    lateinit var listener: PersonajeCreado
+    lateinit var listener: ServicioCreado
 
     /**
      * Método que devuelve la fecha seleccionada en el diálogo del calendario
@@ -32,8 +33,8 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
 
         vista = inflater?.inflate(R.layout.fragment_agregar_servicio, container, false)
 
-        vista.calendario.setOnClickListener(this)
-        vista.agregar_personaje.setOnClickListener(this)
+        vista.servicio_agregar_calendario.setOnClickListener(this)
+        vista.agregar_servicio.setOnClickListener(this)
 
         dialog.setTitle("Agregar Servicio")
         return vista
@@ -41,22 +42,22 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
 
     override fun onClick(v: View?) {
 
-        if(v?.id == vista.calendario.id){
+        if(v?.id == vista.servicio_agregar_calendario.id){
             var calen = CalendarioFragment()
             calen.listener = this
             calen.show(fragmentManager, "Calendario")
         }
 
-        if(v?.id == vista.agregar_personaje.id){
+        if(v?.id == vista.agregar_servicio.id){
 
-            val nombre:String = vista.nombre_formulario.text.toString()
-            val descripcion:String = vista.descripcion_formulario.text.toString()
+            val nombre:String = vista.servicio_detalle_nombre.text.toString()
+            val descripcion:String = vista.servicio_detalle_titulo.text.toString()
             val url:String = vista.url_formulario.text.toString()
 
             if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
 
-                var personaje = Servicio(nombre, fecha, "", descripcion, url)
-                listener.onPersonajeCreadoListener(personaje)
+                var servicio = Servicio(nombre, fecha, "", descripcion, url)
+                listener.onServicioCreadoListener(servicio)
                 dismiss()
             }
 
@@ -65,10 +66,10 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
     }
 
     /**
-     * Interface que sirve como listener para la creación de un personaje
+     * Interface que sirve como listener para la creación de un servicio
      */
-    interface PersonajeCreado{
-        fun onPersonajeCreadoListener(personaje: Servicio)
+    interface ServicioCreado{
+        fun onServicioCreadoListener(servicio: Servicio)
     }
 
 }

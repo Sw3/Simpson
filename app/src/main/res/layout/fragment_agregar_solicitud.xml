@@ -9,15 +9,15 @@
         android:layout_height="50dp">
 
         <EditText
-            android:id="@+id/servicio_agregar_nombre"
+            android:id="@+id/solicitud_agregar_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nombre servicio"/>
+            android:hint="Nombre solicitud"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/servicio_agregar_calendario"
+        android:id="@+id/solicitud_agregar_calendario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calendario"/>
@@ -27,11 +27,11 @@
         android:layout_height="140dp">
 
         <EditText
-            android:id="@+id/servicio_agregar_descripcion"
+            android:id="@+id/solicitud_agregar_descripcion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textMultiLine"
-            android:hint="Descripción servicio"/>
+            android:hint="Descripción solicitud"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -43,14 +43,14 @@
             android:id="@+id/url_formulario"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="URL servicio"/>
+            android:hint="URL solicitud"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/agregar_servicio"
+        android:id="@+id/agregar_solicitud"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar servicio"/>
+        android:text="Agregar solicitud"/>
 
 </LinearLayout>

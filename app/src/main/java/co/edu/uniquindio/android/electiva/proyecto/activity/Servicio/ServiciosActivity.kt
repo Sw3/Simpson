@@ -6,18 +6,18 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.Menu
 import android.view.MenuItem
-import co.edu.uniquindio.android.electiva.simpson.R
-import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.DetalleDeServicioFragment
-import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.ListaDeServiciosFragment
+import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.DetalleDeServicioFragment
+import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.ListaDeServiciosFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import java.util.*
 import kotlin.collections.ArrayList
 
 /**
- * Actividad principal de la aplicación, contiene un recycler view de Personajes
+ * Actividad principal de la aplicación, contiene un recycler view de Servicios
  * @author caflorezvi
  */
-class ServiciosActivity : AppCompatActivity(), ListaDeServiciosFragment.OnPersonajeSeleccionadoListener {
+class ServiciosActivity : AppCompatActivity(), ListaDeServiciosFragment.OnServicioSeleccionadoListener {
 
     lateinit var lista:ArrayList<Servicio>
     var fragment:Fragment? = null
@@ -25,13 +25,13 @@ class ServiciosActivity : AppCompatActivity(), ListaDeServiciosFragment.OnPerson
     /**
      * Método que devuelve la posición que se seleccionó en el recyclerview
      */
-    override fun onPersonajeSeleccionado(pos: Int) {
+    override fun onServicioSeleccionado(pos: Int) {
 
         if (fragment != null) {
             (fragment as DetalleDeServicioFragment).darDetalle(lista[pos])
         }else{
             var intent:Intent = Intent(this, DetalleServicioActivity::class.java)
-            intent.putExtra("personaje", lista.get(pos))
+            intent.putExtra("servicio", lista.get(pos))
             startActivity(intent)
         }
 
@@ -41,23 +41,14 @@ class ServiciosActivity : AppCompatActivity(), ListaDeServiciosFragment.OnPerson
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_servicio)
 
-        fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetallePersonaje)
+        fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleServicio)
 
         lista = ArrayList()
-        lista.add(Servicio("Nelson", Date()))
-        lista.add(Servicio("Bart", Date()))
-        lista.add(Servicio("Homero", Date()))
-        lista.add(Servicio("Lisa", Date()))
-        lista.add(Servicio("Skinner", Date()))
-        lista.add(Servicio("Milhouse", Date()))
-        lista.add(Servicio("Apu", Date()))
-        lista.add(Servicio("Krusty", Date()))
-        lista.add(Servicio("Flanders", Date()))
-        lista.add(Servicio("Maggie", Date()))
-        lista.add(Servicio("Carl", Date()))
-        lista.add(Servicio("Moe", Date()))
+        lista.add( Servicio("Servicio 1", Date()) )
+        lista.add( Servicio("Servicio 2", Date()) )
 
-        val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaPersonajes) as ListaDeServiciosFragment
+
+        val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaServicios) as ListaDeServiciosFragment
         fragmentLista.lista = lista
 
         if (fragment != null) {

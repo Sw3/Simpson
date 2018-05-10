@@ -1,4 +1,4 @@
-package co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio
+package co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado
 
 
 import android.content.Intent
@@ -10,21 +10,21 @@ import android.view.View
 import android.view.ViewGroup
 
 import co.edu.uniquindio.android.electiva.proyecto.R
-import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
-import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.*
+import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
+import kotlinx.android.synthetic.main.fragment_detalle_de_encargado.*
 
 /**
- * Fragmento que muestra el detalle de un servicio
+ * Fragmento que muestra el detalle de un encargado
  * @author caflorezvi
  */
-class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
+class DetalleDeEncargadoFragment : Fragment(), View.OnClickListener {
 
-    lateinit var servicio:Servicio
+    lateinit var encargado:Encargado
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalle_de_servicio, container, false)
+        return inflater.inflate(R.layout.fragment_detalle_de_encargado, container, false)
     }
 
     /**
@@ -36,11 +36,11 @@ class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
     }
 
     /**
-     * Obtiene los atributos de un servicio y los muestra en la pantalla
+     * Obtiene los atributos de un encargado y los muestra en la pantalla
      */
-    fun darDetalle(servicio: Servicio) {
-        this.servicio = servicio
-        servicio_detalle_titulo.text = servicio.nombre
+    fun darDetalle(encargado: Encargado) {
+        this.encargado = encargado
+        encargado_detalle_titulo.text = encargado.nombre
         btnIrAVideo.setOnClickListener(this)
     }
 

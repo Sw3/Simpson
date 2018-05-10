@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/servicio_detalle_titulo"
+                android:id="@+id/encargado_detalle_titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -31,7 +31,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/servicio_detalle_nombre"
+                android:id="@+id/encargado_detalle_nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

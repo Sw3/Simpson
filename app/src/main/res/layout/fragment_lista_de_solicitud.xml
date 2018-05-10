@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicios.ListaDeServiciosFragment">
+    tools:context=".fragment.Solicitud.ListaDeSolicitudsFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/listaPersonajes"
+        android:id="@+id/listaSolicituds"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
