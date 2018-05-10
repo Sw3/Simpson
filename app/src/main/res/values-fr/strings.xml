@@ -10,4 +10,8 @@
     <string name="agrFoto">Photo</string>
     <string name="guardar">Sauvegarder</string>
     <string name="reservar">Resever ceci</string>
+    <string name="editar">Éditer</string>
+    <string name="cedula">Idéntification</string>
+    <string name="telefono">numéro de téléphone</string>
 </resources>
+

@@ -8,36 +8,25 @@ import java.util.*
  * Clase que representa un Cliente de tipo Parcelable
  * @author caflorezvi
  */
-class Encargado (var nombre:String, var fecha:Date) : Parcelable {
+class Encargado (var nombre:String, var cedula: String, var telefono : String) : Parcelable {
 
     var id:String = ""
-    var descripcion:String = "Descripción"
-    var urlVideo:String = ""
+    var servicio_id = ""
 
     constructor(parcel: Parcel) : this(
             parcel.readString(),
-            parcel.readSerializable() as Date) {
+            parcel.readString(),
+            parcel.readString()) {
         id = parcel.readString()
-        descripcion = parcel.readString()
-        urlVideo = parcel.readString()
-    }
-
-    constructor( nombre:String, fecha:Date, id:String, descripcion:String, urlVideo:String ) : this(nombre, fecha){
-        this.id = id
-        this.descripcion = descripcion
-        this.urlVideo = urlVideo
-    }
-
-    override fun toString(): String {
-        return "[${nombre}, ${fecha.toString()}]"
+        servicio_id = parcel.readString()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(nombre)
-        parcel.writeSerializable(fecha)
+        parcel.writeString(cedula)
+        parcel.writeString(telefono)
         parcel.writeString(id)
-        parcel.writeString(descripcion)
-        parcel.writeString(urlVideo)
+        parcel.writeString(servicio_id)
     }
 
     override fun describeContents(): Int {
@@ -53,5 +42,6 @@ class Encargado (var nombre:String, var fecha:Date) : Parcelable {
             return arrayOfNulls(size)
         }
     }
+
 
 }

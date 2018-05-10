@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degradado">
+    >
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -12,38 +12,32 @@
             android:id="@+id/encargado_agregar_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nombre encargado"/>
+            android:hint="@string/nombre"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/encargado_agregar_calendario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calendario"/>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp">
+        android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/encargado_agregar_descripcion"
+            android:id="@+id/encargado_agregar_cedula"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textMultiLine"
-            android:hint="Descripción encargado"/>
+            android:hint="@string/cedula"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/url_formulario"
+            android:id="@+id/encargado_agregar_telefono"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="URL encargado"/>
+            android:hint="@string/telefono"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,6 +45,6 @@
         android:id="@+id/agregar_encargado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar encargado"/>
+        android:text="@string/guardar"/>
 
 </LinearLayout>

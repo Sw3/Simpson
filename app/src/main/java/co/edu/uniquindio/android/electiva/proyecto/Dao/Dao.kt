@@ -28,8 +28,8 @@ class Dao {
         clientes.add(Cliente("cliente 1", Date()))
         clientes.add(Cliente("cliente 2", Date()))
 
-        encargados.add(Encargado("encargado 1", Date()))
-        encargados.add(Encargado("encargado 2", Date()))
+        encargados.add(Encargado("encargado 1", "123","123"))
+        encargados.add(Encargado("encargado 2", "233","1273"))
 
         servicios.add(Servicio("servicio 1", "servicio 1", "descripcion 1", "","descripcion de servicio 1", "lunes a viernes"))
         servicios.add(Servicio("servicio 2", "servicio 2", "descripcion 2", "","descripcion de servicio 2", "solo fines de semana"))

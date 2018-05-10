@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.Menu
 import android.view.MenuItem
+import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.DetalleDeEncargadoFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.ListaDeEncargadosFragment
@@ -43,9 +44,7 @@ class EncargadosActivity : AppCompatActivity(), ListaDeEncargadosFragment.OnEnca
 
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleEncargado)
 
-        lista = ArrayList()
-        lista.add( Encargado("Encargado 1", Date()) )
-        lista.add( Encargado("Encargado 2", Date()) )
+        lista = Repository().ListEncargados()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaEncargados) as ListaDeEncargadosFragment

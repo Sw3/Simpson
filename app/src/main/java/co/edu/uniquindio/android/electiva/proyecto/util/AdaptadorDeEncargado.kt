@@ -50,7 +50,7 @@ class AdaptadorDeEncargado(var encargados:ArrayList<Encargado>) : RecyclerView.A
 
         fun bindEncargado(encargado:Encargado){
             nombre.text = encargado.nombre
-            fechaNacimiento.text = encargado.fecha.toString()
+            fechaNacimiento.text = encargado.telefono
         }
     }
 

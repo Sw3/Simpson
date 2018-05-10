@@ -33,7 +33,7 @@ class AgregarEncargadoFragment : DialogFragment(), View.OnClickListener, Calenda
 
         vista = inflater?.inflate(R.layout.fragment_agregar_encargado, container, false)
 
-        vista.encargado_agregar_calendario.setOnClickListener(this)
+        //vista.encargado_agregar_calendario.setOnClickListener(this)
         vista.agregar_encargado.setOnClickListener(this)
 
         dialog.setTitle("Agregar Cliente")
@@ -42,22 +42,16 @@ class AgregarEncargadoFragment : DialogFragment(), View.OnClickListener, Calenda
 
     override fun onClick(v: View?) {
 
-        if(v?.id == vista.encargado_agregar_calendario.id){
-            var calen = CalendarioFragment()
-            calen.listener = this
-            calen.show(fragmentManager, "Calendario")
-        }
 
         if(v?.id == vista.agregar_encargado.id){
-
-            val nombre:String = vista.encargado_detalle_nombre.text.toString()
+            val nombre:String = vista.encargado_detalle_titulo.text.toString()
             val descripcion:String = vista.encargado_detalle_titulo.text.toString()
-            val url:String = vista.url_formulario.text.toString()
+            //val url:String = vista.url_formulario.text.toString()
 
-            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
+            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty()){
 
-                var encargado = Encargado(nombre, fecha, "", descripcion, url)
-                listener.onEncargadoCreadoListener(encargado)
+                //var encargado = Encargado(nombre, fecha, "", descripcion, url)
+                //listener.onEncargadoCreadoListener(encargado)
                 dismiss()
             }
 

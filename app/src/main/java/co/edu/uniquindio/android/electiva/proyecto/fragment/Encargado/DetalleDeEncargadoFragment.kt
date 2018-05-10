@@ -41,6 +41,8 @@ class DetalleDeEncargadoFragment : Fragment(), View.OnClickListener {
     fun darDetalle(encargado: Encargado) {
         this.encargado = encargado
         encargado_detalle_titulo.text = encargado.nombre
+        encargado_detalle_cedula.text = getString(R.string.cedula) +": "+encargado.cedula
+        encargado_detalle_telefono.text = getString(R.string.telefono) + ": "+ encargado.telefono
         btnIrAVideo.setOnClickListener(this)
     }
 
