@@ -2,55 +2,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degradado">
+    >
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
-
         <EditText
             android:id="@+id/servicio_agregar_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nombre servicio"/>
-
+            android:hint="@string/nombre"/>
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/servicio_agregar_calendario"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calendario"/>
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/servicio_agregar_tipo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/tipo"/>
+    </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="140dp">
-
         <EditText
             android:id="@+id/servicio_agregar_descripcion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textMultiLine"
-            android:hint="Descripción servicio"/>
+            android:hint="@string/descripcion"/>
 
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/servicio_agregar_ubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/ubicacion"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/servicio_agregar_horario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/horario"/>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <EditText
-            android:id="@+id/url_formulario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="URL servicio"/>
-
     </android.support.design.widget.TextInputLayout>
 
+    <Button
+        android:id="@+id/agregar_servicio_foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agrFoto"/>
     <Button
         android:id="@+id/agregar_servicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar servicio"/>
+        android:text="@string/guardar"/>
 
 </LinearLayout>

@@ -41,6 +41,13 @@ class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
     fun darDetalle(servicio: Servicio) {
         this.servicio = servicio
         servicio_detalle_titulo.text = servicio.nombre
+        servicio_detalle_recursos.text = "recursos"
+        servicio_detalle_descripcion.text = getString(R.string.descripcion) + ": "+servicio.descripcion
+        servicio_detalle_horario.text = getString(R.string.horario) + ": "+servicio.horario
+        servicio_detalle_ubicacion.text = getString(R.string.ubicacion) + ": "+servicio.ubicacion
+        servicio_detalle_tipo.text = getString(R.string.tipo) + ": "+servicio.tipoServicio
+
+
         btnIrAVideo.setOnClickListener(this)
     }
 

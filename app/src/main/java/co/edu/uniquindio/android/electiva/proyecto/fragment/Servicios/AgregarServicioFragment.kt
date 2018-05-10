@@ -33,7 +33,7 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
 
         vista = inflater?.inflate(R.layout.fragment_agregar_servicio, container, false)
 
-        vista.servicio_agregar_calendario.setOnClickListener(this)
+        //vista.servicio_agregar_calendario.setOnClickListener(this)
         vista.agregar_servicio.setOnClickListener(this)
 
         dialog.setTitle("Agregar Servicio")
@@ -42,22 +42,17 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
 
     override fun onClick(v: View?) {
 
-        if(v?.id == vista.servicio_agregar_calendario.id){
-            var calen = CalendarioFragment()
-            calen.listener = this
-            calen.show(fragmentManager, "Calendario")
-        }
+
 
         if(v?.id == vista.agregar_servicio.id){
 
-            val nombre:String = vista.servicio_detalle_nombre.text.toString()
+            val nombre:String = vista.servicio_detalle_titulo.text.toString()
             val descripcion:String = vista.servicio_detalle_titulo.text.toString()
-            val url:String = vista.url_formulario.text.toString()
 
-            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
 
-                var servicio = Servicio(nombre, fecha, "", descripcion, url)
-                listener.onServicioCreadoListener(servicio)
+            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty()){
+               //implementacion
+                //listener.onServicioCreadoListener(servicio)
                 dismiss()
             }
 

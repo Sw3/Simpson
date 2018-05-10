@@ -13,37 +13,40 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="112dp"
         android:padding="15dp"
-        android:layout_height="match_parent">
+        android:background="@color/verdeClaro">
 
         <ImageView
             android:id="@+id/imagen"
             android:layout_width="150dp"
             android:layout_height="180dp"
-            android:src="@drawable/silueta"
-            android:tooltipText="Silueta"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/silueta"
+            android:tooltipText="Silueta" />
 
         <TextView
-            android:id= "@+id/servicio_resumen_nombre"
-            android:text= "Nombre"
-            android:layout_width= "wrap_content"
-            android:layout_height= "wrap_content"
-            android:layout_alignParentTop= "true"
-            android:layout_toEndOf= "@+id/imagen"
-            android:textSize= "@dimen/lista_texto_titulo" />
+            android:id="@+id/servicio_resumen_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imagen"
+            android:textColor="@color/textoVerde"
+            android:text="Nombre"
+            android:textSize="@dimen/lista_texto_titulo" />
 
         <TextView
-            android:id= "@+id/servicio_resumen_fecha_nacimiento"
-            android:text= "Fecha de nacimiento"
-            android:layout_width= "wrap_content"
-            android:layout_height= "wrap_content"
-            android:layout_below= "@+id/servicio_resumen_nombre"
-            android:textSize="@dimen/lista_texto_fecha"
-            android:layout_marginTop= "5dp"
-            android:layout_toEndOf= "@+id/imagen" />
+            android:id="@+id/servicio_resumen_fecha_nacimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/servicio_resumen_nombre"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/imagen"
+            android:text="Fecha de nacimiento"
+            android:textColor="@color/textoVerde"
+            android:textSize="@dimen/lista_texto_fecha" />
 
     </RelativeLayout>
 

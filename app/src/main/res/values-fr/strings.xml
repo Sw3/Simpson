@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Services Bienestar UQ</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="texto_detalle_de_personaje">exemple de descripcion</string>
+    <string name="nombre">Nom</string>
+    <string name="tipo">Type</string>
+    <string name="descripcion">Description</string>
+    <string name="ubicacion">Location</string>
+    <string name="horario">Emploi du temps</string>
+    <string name="agrFoto">Photo</string>
+    <string name="guardar">Sauvegarder</string>
+    <string name="reservar">Resever ceci</string>
+</resources>

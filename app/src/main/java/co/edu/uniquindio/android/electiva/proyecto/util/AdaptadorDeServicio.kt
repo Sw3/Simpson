@@ -50,7 +50,7 @@ class AdaptadorDeServicio(var servicios:ArrayList<Servicio>) : RecyclerView.Adap
 
         fun bindServicio(servicio:Servicio){
             nombre.text = servicio.nombre
-            fechaNacimiento.text = servicio.fecha.toString()
+            fechaNacimiento.text = servicio.descripcion
         }
     }
 

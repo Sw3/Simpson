@@ -31,8 +31,8 @@ class Dao {
         encargados.add(Encargado("encargado 1", Date()))
         encargados.add(Encargado("encargado 2", Date()))
 
-        servicios.add(Servicio("servicio 1", Date()))
-        servicios.add(Servicio("servicio 2", Date()))
+        servicios.add(Servicio("servicio 1", "servicio 1", "descripcion 1", "","descripcion de servicio 1", "lunes a viernes"))
+        servicios.add(Servicio("servicio 2", "servicio 2", "descripcion 2", "","descripcion de servicio 2", "solo fines de semana"))
 
         solicitudes.add(Solicitud("solicitud 1", Date()))
         solicitudes.add(Solicitud("solicitud 2", Date()))

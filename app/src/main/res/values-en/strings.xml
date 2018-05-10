@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Servicios Bienestar UQ</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="texto_detalle_de_personaje">ejemplo de descripcion</string>
+</resources>
