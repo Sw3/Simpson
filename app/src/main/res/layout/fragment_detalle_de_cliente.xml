@@ -9,7 +9,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:contentDescription="Imagen cabecera"
-        android:src="@drawable/cabecera_personajes" />
+        android:scaleType="fitStart"
+        android:src="@drawable/bienestar" />
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_weight="2"
@@ -31,7 +32,39 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/cliente_detalle_nombre"
+                android:id="@+id/cliente_detalle_cedula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cliente_detalle_tipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cliente_detalle_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cliente_detalle_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cliente_detalle_dependencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -44,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="12dp"
-                android:text="Ver video" />
+                android:text="@string/editar" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

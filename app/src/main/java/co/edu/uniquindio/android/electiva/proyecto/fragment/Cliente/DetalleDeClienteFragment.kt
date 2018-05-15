@@ -40,7 +40,12 @@ class DetalleDeClienteFragment : Fragment(), View.OnClickListener {
      */
     fun darDetalle(cliente: Cliente) {
         this.cliente = cliente
-        cliente_detalle_titulo.text = cliente.nombre
+        cliente_detalle_titulo.text = getString(R.string.nombre)+": "+ cliente.nombre
+        cliente_detalle_cedula.text = getString(R.string.cedula)+": "+ cliente.cedula
+        cliente_detalle_dependencia.text = getString(R.string.dependencia)+": "+ cliente.dependencia
+        cliente_detalle_email.text =getString(R.string.mail)+": "+  cliente.email
+        cliente_detalle_tipo.text =getString(R.string.tipo)+": "+ cliente.tipo
+        cliente_detalle_telefono.text =getString(R.string.telefono)+": "+ cliente.telefono
         btnIrAVideo.setOnClickListener(this)
     }
 

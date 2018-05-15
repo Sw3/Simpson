@@ -22,12 +22,12 @@ import java.util.*
 class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdaptadorDeEncargado, AgregarEncargadoFragment.EncargadoCreado {
 
     override fun onEncargadoCreadoListener(encargado: Encargado) {
-        Repository().addEncargado(encargado)
-        lista = Repository().ListEncargados()
-        val ft = fragmentManager.beginTransaction()
-        ft.detach(this).attach(this).commit()
-        //lista.add(0, encargado)
-        //adaptador.notifyItemInserted(0)
+        //Repository().addEncargado(encargado)
+        //lista = Repository().ListEncargados()
+        //val ft = fragmentManager.beginTransaction()
+        //ft.detach(this).attach(this).commit()
+        lista.add(0, encargado)
+        adaptador.notifyItemInserted(0)
     }
 
     /**
@@ -85,17 +85,7 @@ class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdapta
                 //adaptador.notifyItemInserted(0)
             }
 
-            R.id.menu_eliminar -> {
-                lista.removeAt(1)
-                adaptador.notifyItemRemoved(1)
-            }
 
-            R.id.menu_modificar -> {
-                var aux:Encargado = lista.get(1)
-                lista.set(1, lista.get(2))
-                lista.set(2, aux)
-                adaptador.notifyItemMoved(1,2)
-            }
 
         }
 

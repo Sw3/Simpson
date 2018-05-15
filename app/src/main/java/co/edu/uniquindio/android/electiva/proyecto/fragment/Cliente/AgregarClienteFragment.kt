@@ -33,31 +33,27 @@ class AgregarClienteFragment : DialogFragment(), View.OnClickListener, Calendari
 
         vista = inflater?.inflate(R.layout.fragment_agregar_cliente, container, false)
 
-        vista.cliente_agregar_calendario.setOnClickListener(this)
+
         vista.agregar_cliente.setOnClickListener(this)
 
-        dialog.setTitle("Agregar Cliente")
+        dialog.setTitle(R.string.addClient)
         return vista
     }
 
     override fun onClick(v: View?) {
 
-        if(v?.id == vista.cliente_agregar_calendario.id){
-            var calen = CalendarioFragment()
-            calen.listener = this
-            calen.show(fragmentManager, "Calendario")
-        }
-
         if(v?.id == vista.agregar_cliente.id){
 
-            val nombre:String = vista.cliente_detalle_nombre.text.toString()
-            val descripcion:String = vista.cliente_detalle_titulo.text.toString()
-            val url:String = vista.url_formulario.text.toString()
+            val nombre:String = vista.cliente_agregar_nombre.text.toString()
+            val cedula:String = vista.cliente_agregar_cedula.text.toString()
+            val email:String = vista.cliente_agregar_email.text.toString()
+            val tipo:String = vista.cliente_agregar_tipo.text.toString()
+            val dependencia:String = vista.cliente_agregar_dependencia.text.toString()
+            val telefono:String = vista.cliente_agregar_telefono.text.toString()
 
-            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
 
-                var cliente = Cliente(nombre, fecha, "", descripcion, url)
-                listener.onClienteCreadoListener(cliente)
+            if( !nombre.isEmpty() && !cedula.isEmpty() && !tipo.isEmpty() && !email.isEmpty() && !dependencia.isEmpty() && !telefono.isEmpty() ){
+                listener.onClienteCreadoListener(Cliente(nombre,cedula,tipo,email,dependencia,telefono, ""))
                 dismiss()
             }
 

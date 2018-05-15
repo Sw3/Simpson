@@ -25,8 +25,9 @@ class Dao {
         fillLists()
     }
     fun fillLists(){
-        clientes.add(Cliente("cliente 1", Date()))
-        clientes.add(Cliente("cliente 2", Date()))
+        clientes.add(Cliente("cliente 1","123","estudiante","mail@mail.com","ingenieria", "7444444",""))
+        clientes.add(Cliente("cliente 2","456","profesor","mail2@mail.com","educacion", "7444444",""))
+
 
         encargados.add(Encargado("encargado 1", "123","123"))
         encargados.add(Encargado("encargado 2", "233","1273"))

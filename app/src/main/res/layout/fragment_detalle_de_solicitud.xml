@@ -9,7 +9,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:contentDescription="Imagen cabecera"
-        android:src="@drawable/cabecera_personajes" />
+        android:scaleType="fitStart"
+        android:src="@drawable/bienestar" />
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_weight="2"

@@ -50,7 +50,7 @@ class AdaptadorDeCliente(var clientes:ArrayList<Cliente>) : RecyclerView.Adapter
 
         fun bindCliente(cliente:Cliente){
             nombre.text = cliente.nombre
-            fechaNacimiento.text = cliente.fecha.toString()
+            fechaNacimiento.text = cliente.cedula
         }
     }
 

@@ -8,36 +8,30 @@ import java.util.*
  * Clase que representa un Cliente de tipo Parcelable
  * @author caflorezvi
  */
-class Cliente (var nombre:String, var fecha:Date) : Parcelable {
+class Cliente (var nombre:String, var cedula:String,var tipo:String,var email:String,var dependencia:String,var telefono:String,var foto:String) : Parcelable {
 
     var id:String = ""
-    var descripcion:String = "Descripción"
-    var urlVideo:String = ""
 
     constructor(parcel: Parcel) : this(
             parcel.readString(),
-            parcel.readSerializable() as Date) {
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString()) {
         id = parcel.readString()
-        descripcion = parcel.readString()
-        urlVideo = parcel.readString()
-    }
-
-    constructor( nombre:String, fecha:Date, id:String, descripcion:String, urlVideo:String ) : this(nombre, fecha){
-        this.id = id
-        this.descripcion = descripcion
-        this.urlVideo = urlVideo
-    }
-
-    override fun toString(): String {
-        return "[${nombre}, ${fecha.toString()}]"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(nombre)
-        parcel.writeSerializable(fecha)
+        parcel.writeString(cedula)
+        parcel.writeString(tipo)
+        parcel.writeString(email)
+        parcel.writeString(dependencia)
+        parcel.writeString(telefono)
+        parcel.writeString(foto)
         parcel.writeString(id)
-        parcel.writeString(descripcion)
-        parcel.writeString(urlVideo)
     }
 
     override fun describeContents(): Int {
@@ -53,5 +47,6 @@ class Cliente (var nombre:String, var fecha:Date) : Parcelable {
             return arrayOfNulls(size)
         }
     }
+
 
 }

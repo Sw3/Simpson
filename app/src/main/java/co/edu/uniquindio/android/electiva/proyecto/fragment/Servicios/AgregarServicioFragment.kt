@@ -36,7 +36,7 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
         //vista.servicio_agregar_calendario.setOnClickListener(this)
         vista.agregar_servicio.setOnClickListener(this)
 
-        dialog.setTitle("Agregar Servicio")
+        dialog.setTitle(R.string.addService)
         return vista
     }
 
@@ -46,13 +46,15 @@ class AgregarServicioFragment : DialogFragment(), View.OnClickListener, Calendar
 
         if(v?.id == vista.agregar_servicio.id){
 
-            val nombre:String = vista.servicio_detalle_titulo.text.toString()
-            val descripcion:String = vista.servicio_detalle_titulo.text.toString()
+            val nombre:String = vista.servicio_agregar_nombre.text.toString()
+            val descripcion:String = vista.servicio_agregar_descripcion.text.toString()
+            var tipo : String =vista.servicio_agregar_tipo.text.toString()
+            var ubicacion : String =vista.servicio_agregar_ubicacion.text.toString()
+            var horario : String =vista.servicio_agregar_horario.text.toString()
 
 
-            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty()){
-               //implementacion
-                //listener.onServicioCreadoListener(servicio)
+            if(!descripcion.isEmpty()&& !nombre.isEmpty()&& !tipo.isEmpty()&& !ubicacion.isEmpty()&& !horario.isEmpty()){
+                listener.onServicioCreadoListener(Servicio(nombre, "", ubicacion,tipo,descripcion, horario))
                 dismiss()
             }
 

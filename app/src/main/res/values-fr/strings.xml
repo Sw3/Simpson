@@ -12,7 +12,7 @@
     <string name="reservar">Resever ceci</string>
     <string name="editar">Éditer</string>
     <string name="cedula">Idéntification</string>
-    <string name="telefono">numéro de téléphone</string>
+    <string name="telefono">Numéro de téléphone</string>
     <string name="navigation_drawer_open">Ouvrir</string>
     <string name="navigation_drawer_close">Fermer</string>
     <string name="menuservicios">Gérer les services</string>
@@ -21,5 +21,10 @@
     <string name="menuencargados">Gérer les administratifs</string>
     <string name="logout">Fermer la sesión</string>
     <string name="addAdmin">Ajouter un administratif </string>
+    <string name="addService">Ajouter un service</string>
+    <string name="addClient">Ajouter un client</string>
+    <string name="nuevo">Nouveau...</string>
+    <string name="mail">Email</string>
+    <string name="dependencia">Dependency</string>
 </resources>
 

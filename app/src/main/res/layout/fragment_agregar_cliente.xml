@@ -12,26 +12,17 @@
             android:id="@+id/cliente_agregar_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nombre cliente"/>
+            android:hint="@string/nombre"/>
 
     </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:id="@+id/cliente_agregar_calendario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calendario"/>
-
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp">
-
+        android:layout_height="50dp">
         <EditText
-            android:id="@+id/cliente_agregar_descripcion"
+            android:id="@+id/cliente_agregar_cedula"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textMultiLine"
-            android:hint="Descripción cliente"/>
+            android:hint="@string/cedula"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -40,10 +31,44 @@
         android:layout_height="50dp">
 
         <EditText
-            android:id="@+id/url_formulario"
+            android:id="@+id/cliente_agregar_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="URL cliente"/>
+            android:hint="@string/mail"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/cliente_agregar_tipo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/tipo"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/cliente_agregar_dependencia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/dependencia"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/cliente_agregar_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/telefono"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,6 +76,6 @@
         android:id="@+id/agregar_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar cliente"/>
+        android:text="@string/guardar"/>
 
 </LinearLayout>

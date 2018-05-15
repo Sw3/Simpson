@@ -80,17 +80,6 @@ class ListaDeServiciosFragment : Fragment(), AdaptadorDeServicio.OnClickAdaptado
                 //adaptador.notifyItemInserted(0)
             }
 
-            R.id.menu_eliminar -> {
-                lista.removeAt(1)
-                adaptador.notifyItemRemoved(1)
-            }
-
-            R.id.menu_modificar -> {
-                var aux:Servicio = lista.get(1)
-                lista.set(1, lista.get(2))
-                lista.set(2, aux)
-                adaptador.notifyItemMoved(1,2)
-            }
 
         }
 
