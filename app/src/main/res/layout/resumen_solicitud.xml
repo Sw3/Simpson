@@ -13,8 +13,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:padding="15dp"
-        android:layout_height="match_parent">
+        android:background="@color/verdeClaro">
 
         <ImageView
             android:id="@+id/imagen"
@@ -28,22 +29,24 @@
 
         <TextView
             android:id= "@+id/solicitud_resumen_nombre"
-            android:text= "Nombre"
-            android:layout_width= "wrap_content"
-            android:layout_height= "wrap_content"
-            android:layout_alignParentTop= "true"
-            android:layout_toEndOf= "@+id/imagen"
-            android:textSize= "@dimen/lista_texto_titulo" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imagen"
+            android:textColor="@color/textoVerde"
+            android:text="Nombre"
+            android:textSize="@dimen/lista_texto_fecha" />
 
         <TextView
-            android:id= "@+id/solicitud_resumen_fecha_nacimiento"
-            android:text= "Fecha de nacimiento"
-            android:layout_width= "wrap_content"
-            android:layout_height= "wrap_content"
-            android:layout_below= "@+id/solicitud_resumen_nombre"
-            android:textSize="@dimen/lista_texto_fecha"
-            android:layout_marginTop= "5dp"
-            android:layout_toEndOf= "@+id/imagen" />
+            android:id="@+id/solicitud_resumen_fecha_nacimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/solicitud_resumen_nombre"
+            android:layout_marginBottom="29dp"
+            android:text="Fecha de nacimiento"
+            android:textColor="@color/textoVerde"
+            android:textSize="@dimen/lista_texto_fecha" />
 
     </RelativeLayout>
 
