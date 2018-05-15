@@ -13,4 +13,11 @@
     <string name="editar">Editar</string>
     <string name="cedula">Cédula</string>
     <string name="telefono">Teléfono</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
+    <string name="menuservicios">Administrar servicios</string>
+    <string name="menuclientes">Administrar clientes</string>
+    <string name="menusolicitudes">administrar solicitudes</string>
+    <string name="menuencargados">Administar encargados</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>
