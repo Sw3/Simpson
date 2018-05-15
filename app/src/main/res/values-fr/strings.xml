@@ -20,5 +20,6 @@
     <string name="menusolicitudes">Gérer les requêtes </string>
     <string name="menuencargados">Gérer les administratifs</string>
     <string name="logout">Fermer la sesión</string>
+    <string name="addAdmin">Ajouter un administratif </string>
 </resources>
 

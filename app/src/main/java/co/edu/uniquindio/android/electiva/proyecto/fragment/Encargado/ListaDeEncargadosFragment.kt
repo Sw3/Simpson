@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeEncargado
@@ -21,8 +22,12 @@ import java.util.*
 class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdaptadorDeEncargado, AgregarEncargadoFragment.EncargadoCreado {
 
     override fun onEncargadoCreadoListener(encargado: Encargado) {
-        lista.add(0, encargado)
-        adaptador.notifyItemInserted(0)
+        Repository().addEncargado(encargado)
+        lista = Repository().ListEncargados()
+        val ft = fragmentManager.beginTransaction()
+        ft.detach(this).attach(this).commit()
+        //lista.add(0, encargado)
+        //adaptador.notifyItemInserted(0)
     }
 
     /**

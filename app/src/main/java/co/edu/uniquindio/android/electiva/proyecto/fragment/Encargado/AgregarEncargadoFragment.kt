@@ -36,7 +36,7 @@ class AgregarEncargadoFragment : DialogFragment(), View.OnClickListener, Calenda
         //vista.encargado_agregar_calendario.setOnClickListener(this)
         vista.agregar_encargado.setOnClickListener(this)
 
-        dialog.setTitle("Agregar Cliente")
+        dialog.setTitle(R.string.addAdmin)
         return vista
     }
 
@@ -44,14 +44,15 @@ class AgregarEncargadoFragment : DialogFragment(), View.OnClickListener, Calenda
 
 
         if(v?.id == vista.agregar_encargado.id){
-            val nombre:String = vista.encargado_detalle_titulo.text.toString()
-            val descripcion:String = vista.encargado_detalle_titulo.text.toString()
+            val nombre:String = vista.encargado_agregar_nombre.text.toString()
+            val cedula:String = vista.encargado_agregar_cedula.text.toString()
+            val tel:String = vista.encargado_agregar_telefono.text.toString()
             //val url:String = vista.url_formulario.text.toString()
 
-            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty()){
+            if(!nombre.isEmpty() && !cedula.isEmpty() && !tel.isEmpty()){
 
-                //var encargado = Encargado(nombre, fecha, "", descripcion, url)
-                //listener.onEncargadoCreadoListener(encargado)
+                var encargado = Encargado(nombre, cedula, tel)
+                listener.onEncargadoCreadoListener(encargado)
                 dismiss()
             }
 
