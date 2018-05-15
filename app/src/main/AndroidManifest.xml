@@ -21,6 +21,7 @@
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.DetalleServicioActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.DetalleClienteActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity"/>
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.DetalleSolicitudActivity"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

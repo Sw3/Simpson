@@ -1,16 +1,25 @@
 package co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
+import android.support.v4.view.GravityCompat
+import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.DetalleDeSolicitudFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.ListaDeSolicitudsFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
+import kotlinx.android.synthetic.main.activity_encargado.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -18,10 +27,10 @@ import kotlin.collections.ArrayList
  * Actividad principal de la aplicación, contiene un recycler view de Solicituds
  * @author caflorezvi
  */
-class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSolicitudSeleccionadoListener {
+class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSolicitudSeleccionadoListener,  NavigationView.OnNavigationItemSelectedListener  {
 
-    lateinit var lista:ArrayList<Solicitud>
-    var fragment:Fragment? = null
+    lateinit var lista: ArrayList<Solicitud>
+    var fragment: Fragment? = null
 
     /**
      * Método que devuelve la posición que se seleccionó en el recyclerview
@@ -30,8 +39,8 @@ class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSoli
 
         if (fragment != null) {
             (fragment as DetalleDeSolicitudFragment).darDetalle(lista[pos])
-        }else{
-            var intent:Intent = Intent(this, DetalleSolicitudActivity::class.java)
+        } else {
+            var intent: Intent = Intent(this, DetalleSolicitudActivity::class.java)
             intent.putExtra("solicitud", lista.get(pos))
             startActivity(intent)
         }
@@ -42,6 +51,18 @@ class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSoli
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitud)
 
+        //navigation view
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+        val toggle = ActionBarDrawerToggle(this, drawer_layout,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+        navview.itemIconTintList = null
+        navview.setNavigationItemSelectedListener(this)
+
+        //finNavigation
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleSolicitud)
 
         lista = Repository().ListSolicitudes()
@@ -61,7 +82,49 @@ class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSoli
         return true
     }
 
+    /**
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    return super.onOptionsItemSelected(item)
+    }
+     **/
+    //metodos navigationView
+    fun reemplazarFragmento(act: Activity) {
+        var intent: Intent = Intent(this, act::class.java)
+        startActivity(intent)
+    }
+
+    fun mostrarMensaje(mensaje: String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_seccion_1 -> reemplazarFragmento(ClientesActivity())
+            R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
+            R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
+            R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
+
+        }
+        item.isChecked = true
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                drawer_layout.openDrawer(GravityCompat.START)
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+//fin navview
 }

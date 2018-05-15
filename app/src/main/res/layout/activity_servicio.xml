@@ -4,10 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.Servicio.ServiciosActivity">
-
+    <android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+    <!-- Contenido de la actividad -->
+    <include layout="@layout/contenido" />
+    <!-- Navigation View -->
     <fragment
         android:id="@+id/fragmentoListaServicios"
         class="co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.ListaDeServiciosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/encabezado_navview"
+            app:menu="@menu/menu_nav" />
+    </android.support.v4.widget.DrawerLayout>
 </FrameLayout>

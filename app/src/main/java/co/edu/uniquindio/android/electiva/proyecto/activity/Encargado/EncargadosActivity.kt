@@ -2,7 +2,6 @@ package co.edu.uniquindio.android.electiva.proyecto.activity.Encargado
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -15,11 +14,11 @@ import android.widget.Toast
 import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
-import co.edu.uniquindio.android.electiva.proyecto.fragment.Cliente.ListaDeClientesFragment
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.DetalleDeEncargadoFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.ListaDeEncargadosFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
-import kotlinx.android.synthetic.main.activity_cliente.*
 import kotlinx.android.synthetic.main.activity_encargado.*
 import kotlin.collections.ArrayList
 
@@ -100,9 +99,9 @@ class EncargadosActivity() : AppCompatActivity(), ListaDeEncargadosFragment.OnEn
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_seccion_1 -> reemplazarFragmento(ClientesActivity())
-            R.id.menu_seccion_2 -> mostrarMensaje("Pulsada seccion 2")
-            R.id.menu_seccion_3 -> mostrarMensaje("Pulsada seccion 3")
-            R.id.menu_opcion_1 -> mostrarMensaje("Pulsada opción 1")
+            R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
+            R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
+            R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
 
         }
         item.isChecked = true
