@@ -24,7 +24,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/silueta"
+            android:src="@drawable/admin"
             android:tooltipText="Silueta" />
 
         <TextView
