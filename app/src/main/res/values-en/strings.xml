@@ -1,5 +1,44 @@
 <resources>
-    <string name="app_name">Servicios Bienestar UQ</string>
+    <string name="app_name">Services Bienestar UQ</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="texto_detalle_de_personaje">ejemplo de descripcion</string>
+    <string name="texto_detalle_de_personaje">description example</string>
+    <string name="nombre">Name</string>
+    <string name="tipo">Type</string>
+    <string name="descripcion">Description</string>
+    <string name="ubicacion">Location</string>
+    <string name="horario">Schedule</string>
+    <string name="agrFoto">Add photo</string>
+    <string name="guardar">Save</string>
+    <string name="reservar">Reserve</string>
+    <string name="editar">Edit</string>
+    <string name="cedula">Dni</string>
+    <string name="telefono">Phone number</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="menuservicios">to Manage services</string>
+    <string name="menuclientes">to Manage clients</string>
+    <string name="menusolicitudes">to Manage requests</string>
+    <string name="menuencargados">to Manage administrators</string>
+    <string name="logout">Log out</string>
+    <string name="addAdmin">Add administrator</string>
+    <string name="addService">Add service</string>
+    <string name="addClient">Add client</string>
+    <string name="nuevo">New...</string>
+    <string name="mail">Email</string>
+    <string name="dependencia">Dependency</string>
+    <string name="title_activity_login">Acces</string>
+    <string name="bienvenido">Welcome</string>
+    <string name="msnbienvenida">This is the official App where you can manage the resources associated with the University Welfare services. To start, slide your finger from left to right to activate the menu.</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>

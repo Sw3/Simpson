@@ -26,4 +26,18 @@
     <string name="nuevo">Nuevo...</string>
     <string name="mail">Email</string>
     <string name="dependencia">Dependencia</string>
+    <string name="title_activity_login">Acceso</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="msnbienvenida">Esta es la App oficial en la que podrá administrar los recursos asociados a los servicios de Bienestar universitario. Para comenzar, deslice el dedo de izquierda a derecha para activar el menú.</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">contraseña</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="error_invalid_email">Dirección de correo inválida</string>
+    <string name="error_invalid_password">Esta contraseña es demasiado corta</string>
+    <string name="error_incorrect_password">Esta contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="permission_rationale">Acceso a contactos es necesario para autocompletar direcciones de correo."
+    </string>
 </resources>

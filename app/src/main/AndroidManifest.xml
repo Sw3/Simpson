@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.edu.uniquindio.android.electiva.proyecto">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,25 +15,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity">
+        <activity android:name=".activity.Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.DetalleClienteActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.DetalleServicioActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.DetalleClienteActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.DetalleSolicitudActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.CServiciosActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.DetalleCservicioActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity"/>
-        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.DetalleCsolicitudActivity"/>
-
+        <activity android:name=".activity.Encargado.EncargadosActivity" />
+        <activity android:name=".activity.Cliente.DetalleClienteActivity" />
+        <activity android:name=".activity.Cliente.ClientesActivity" />
+        <activity android:name=".activity.Servicio.DetalleServicioActivity" />
+        <activity android:name=".activity.Encargado.DetalleClienteActivity" />
+        <activity android:name=".activity.Solicitud.SolicitudsActivity" />
+        <activity android:name=".activity.Servicio.ServiciosActivity" />
+        <activity android:name=".activity.Solicitud.DetalleSolicitudActivity" />
+        <activity android:name=".activity.CServicio.CServiciosActivity" />
+        <activity android:name=".activity.CServicio.DetalleCservicioActivity" />
+        <activity android:name=".activity.CSolicitud.CSolicitudsActivity" />
+        <activity android:name=".activity.CSolicitud.DetalleCsolicitudActivity" />
+        <activity android:name=".activity.Login.AdmBienvenidoActivity" />
+        <activity android:name=".activity.Login.CliBienvenidoActivity" />
+        <activity android:name=".activity.Login.RegistrarseActivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>
