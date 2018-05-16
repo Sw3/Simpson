@@ -17,6 +17,14 @@
             android:id="@+id/menu_seccion_4"
             android:icon="@drawable/administar"
             android:title="@string/menusolicitudes" />
+        <item
+            android:id="@+id/menu_seccion_5"
+            android:icon="@drawable/administar"
+            android:title="@string/menusolicitudes" />
+        <item
+        android:id="@+id/menu_seccion_6"
+        android:icon="@drawable/administar"
+        android:title="@string/menusolicitudes" />
     </group>
     <item
         android:id="@+id/navigation_subheader"

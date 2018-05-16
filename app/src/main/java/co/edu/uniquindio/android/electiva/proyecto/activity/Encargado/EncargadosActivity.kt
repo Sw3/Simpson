@@ -14,6 +14,8 @@ import android.widget.Toast
 import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.CServiciosActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.DetalleDeEncargadoFragment
@@ -102,7 +104,8 @@ class EncargadosActivity() : AppCompatActivity(), ListaDeEncargadosFragment.OnEn
             R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
             R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
             R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
-
+            R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
+            R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
         }
         item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)

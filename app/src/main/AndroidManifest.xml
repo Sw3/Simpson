@@ -23,6 +23,11 @@
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity"/>
         <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.DetalleSolicitudActivity"/>
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.CServiciosActivity"/>
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.DetalleCservicioActivity"/>
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity"/>
+        <activity android:name="co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.DetalleCsolicitudActivity"/>
+
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
