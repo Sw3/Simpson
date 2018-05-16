@@ -40,7 +40,7 @@ class DetalleDeCsolicitudFragment : Fragment(), View.OnClickListener {
      */
     fun darDetalle(csolicitud: Csolicitud) {
         this.csolicitud = csolicitud
-        csolicitud_detalle_titulo.text = csolicitud.nombre
+        csolicitud_detalle_titulo.text = csolicitud.servicio
         btnIrAVideo.setOnClickListener(this)
     }
 

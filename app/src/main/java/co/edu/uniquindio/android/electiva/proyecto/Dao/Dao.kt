@@ -14,6 +14,8 @@ class Dao {
         lateinit var encargados : ArrayList<Encargado>
         lateinit var servicios : ArrayList<Servicio>
         lateinit var solicitudes: ArrayList<Solicitud>
+        lateinit var csolicitudes: ArrayList<Csolicitud>
+        lateinit var cservicios : ArrayList<Cservicio>
             private set
     }
 
@@ -22,6 +24,8 @@ class Dao {
         encargados = ArrayList()
         servicios = ArrayList()
         solicitudes = ArrayList()
+        csolicitudes = ArrayList()
+        cservicios = ArrayList()
         fillLists()
     }
     fun fillLists(){
@@ -37,6 +41,10 @@ class Dao {
 
         solicitudes.add(Solicitud("solicitud 1", Date()))
         solicitudes.add(Solicitud("solicitud 2", Date()))
+
+        cservicios.add(Cservicio("servicio 1", "servicio 1", "descripcion 1", "","descripcion de servicio 1", "lunes a viernes"))
+        cservicios.add(Cservicio("servicio 2", "servicio 2", "descripcion 2", "","descripcion de servicio 2", "solo fines de semana"))
+
     }
 
     /**
@@ -51,6 +59,7 @@ class Dao {
     fun addServicio(servicio: Servicio){
         servicios.add(servicio)
     }
+
     fun addSolicitudes(solicitud: Solicitud){
         solicitudes.add(solicitud)
     }
@@ -63,6 +72,9 @@ class Dao {
     }
     fun ListServicios():ArrayList<Servicio>{
         return servicios
+    }
+    fun ListCServicios():ArrayList<Cservicio>{
+        return cservicios
     }
     fun ListSolicitudes():ArrayList<Solicitud>{
         return solicitudes

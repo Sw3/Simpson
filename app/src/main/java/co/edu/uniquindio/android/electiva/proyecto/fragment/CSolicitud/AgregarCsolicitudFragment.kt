@@ -55,9 +55,10 @@ class AgregarCsolicitudFragment : DialogFragment(), View.OnClickListener, Calend
             val url:String = vista.url_formulario.text.toString()
 
             if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
-
+/**
                 var csolicitud = Csolicitud(nombre, fecha, "", descripcion, url)
                 listener.onCSolicitudCreadoListener(csolicitud)
+                **/
                 dismiss()
             }
 

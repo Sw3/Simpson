@@ -8,36 +8,23 @@ import java.util.*
  * Clase que representa un CSolicitud de tipo Parcelable
  * @author caflorezvi
  */
-class Csolicitud (var nombre:String, var fecha:Date) : Parcelable {
+class Csolicitud (var persona:String, var fecha:Date, var servicio : String, var hora : String) : Parcelable {
 
     var id:String = ""
-    var descripcion:String = "Descripción"
-    var urlVideo:String = ""
 
     constructor(parcel: Parcel) : this(
             parcel.readString(),
-            parcel.readSerializable() as Date) {
+            parcel.readSerializable() as Date,
+            parcel.readString(),
+            parcel.readString()) {
         id = parcel.readString()
-        descripcion = parcel.readString()
-        urlVideo = parcel.readString()
-    }
-
-    constructor( nombre:String, fecha:Date, id:String, descripcion:String, urlVideo:String ) : this(nombre, fecha){
-        this.id = id
-        this.descripcion = descripcion
-        this.urlVideo = urlVideo
-    }
-
-    override fun toString(): String {
-        return "[${nombre}, ${fecha.toString()}]"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(nombre)
-        parcel.writeSerializable(fecha)
+        parcel.writeString(persona)
+        parcel.writeString(servicio)
+        parcel.writeString(hora)
         parcel.writeString(id)
-        parcel.writeString(descripcion)
-        parcel.writeString(urlVideo)
     }
 
     override fun describeContents(): Int {
@@ -53,5 +40,6 @@ class Csolicitud (var nombre:String, var fecha:Date) : Parcelable {
             return arrayOfNulls(size)
         }
     }
+
 
 }

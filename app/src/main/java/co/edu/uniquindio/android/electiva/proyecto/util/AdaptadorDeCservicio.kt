@@ -50,7 +50,7 @@ class AdaptadorDeCservicio(var cservicios:ArrayList<Cservicio>) : RecyclerView.A
 
         fun bindCServicio(cservicio:Cservicio){
             nombre.text = cservicio.nombre
-            fechaNacimiento.text = cservicio.fecha.toString()
+            //fechaNacimiento.text = cservicio.fecha.toString()
         }
     }
 

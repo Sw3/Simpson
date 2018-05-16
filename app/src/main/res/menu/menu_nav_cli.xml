@@ -4,11 +4,11 @@
         <item
             android:id="@+id/menu_seccion_5"
             android:icon="@drawable/administar"
-            android:title="@string/missolicitudes" />
+            android:title="@string/serviciosdispon" />
         <item
         android:id="@+id/menu_seccion_6"
         android:icon="@drawable/administar"
-        android:title="@string/serviciosdispon" />
+        android:title="@string/missolicitudes" />
     </group>
     <item
         android:id="@+id/navigation_subheader"

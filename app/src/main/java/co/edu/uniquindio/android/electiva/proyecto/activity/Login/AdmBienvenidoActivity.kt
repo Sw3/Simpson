@@ -52,8 +52,7 @@ class AdmBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
             R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
             R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
             R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
-            R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
-            R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
+
         }
         item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)

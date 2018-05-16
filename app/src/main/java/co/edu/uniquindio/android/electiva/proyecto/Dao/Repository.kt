@@ -1,9 +1,6 @@
 package co.edu.uniquindio.android.electiva.proyecto.Dao
 
-import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
-import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
-import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
-import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
+import co.edu.uniquindio.android.electiva.proyecto.vo.*
 
 class Repository {
     lateinit var daoImplementation : Dao
@@ -36,6 +33,9 @@ class Repository {
     }
     fun ListServicios():ArrayList<Servicio>{
         return daoImplementation.ListServicios()
+    }
+    fun ListCServicios():ArrayList<Cservicio>{
+        return daoImplementation.ListCServicios()
     }
     fun ListSolicitudes():ArrayList<Solicitud>{
         return daoImplementation.ListSolicitudes()

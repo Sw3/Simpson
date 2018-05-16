@@ -48,12 +48,9 @@ class CliBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_seccion_1 -> reemplazarFragmento(ClientesActivity())
-            R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
-            R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
-            R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
             R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
             R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
+
         }
         item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)

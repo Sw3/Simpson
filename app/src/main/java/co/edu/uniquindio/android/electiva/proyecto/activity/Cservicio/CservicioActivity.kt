@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
@@ -67,9 +68,7 @@ class CServiciosActivity : AppCompatActivity(), ListaDeCServiciosFragment.OnCSer
 
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleCServicio)
 
-        lista = ArrayList()
-        lista.add( Cservicio("CServicio 1", Date()) )
-        lista.add( Cservicio("CServicio 2", Date()) )
+        lista = Repository().ListCServicios()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaCServicios) as ListaDeCServiciosFragment
@@ -96,12 +95,9 @@ class CServiciosActivity : AppCompatActivity(), ListaDeCServiciosFragment.OnCSer
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_seccion_1 -> reemplazarFragmento(ClientesActivity())
-            R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
-            R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
-            R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
             R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
             R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
+
         }
         item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)

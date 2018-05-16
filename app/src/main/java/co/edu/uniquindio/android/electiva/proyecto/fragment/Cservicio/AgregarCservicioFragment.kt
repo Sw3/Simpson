@@ -55,9 +55,10 @@ class AgregarCservicioFragment : DialogFragment(), View.OnClickListener, Calenda
             val url:String = vista.url_formulario.text.toString()
 
             if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
-
+/**
                 var cservicio = Cservicio(nombre, fecha, "", descripcion, url)
                 listener.onCServicioCreadoListener(cservicio)
+                **/
                 dismiss()
             }
 
