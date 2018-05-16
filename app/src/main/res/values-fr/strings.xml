@@ -38,5 +38,8 @@
     <string name="error_incorrect_password">ce mot de passe n´est pas le bon</string>
     <string name="error_field_required">cette information est necesaire</string>
     <string name="permission_rationale">"Les permissions de contacts sont nécessaires pour compléter les courriels."</string>
+    <string name="missolicitudes">Mes solicitudes</string>
+    <string name="serviciosdispon">Services en disponibilité</string>
+    <string name="msnbienvenidacli">Ceci est l´appli dans laquelle vous pourriez reserver des services du Bien-être Universitaire du Université du Quindío. Pour commencer, faites glisser votre doigt de gauche à droite pour activer le menu.</string>
 </resources>
 

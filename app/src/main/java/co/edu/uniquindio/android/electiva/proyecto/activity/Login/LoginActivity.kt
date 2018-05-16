@@ -269,7 +269,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
             if (success!!) {
                 //Acceso al sistema
-                var intent: Intent = Intent(applicationContext, AdmBienvenidoActivity::class.java)
+                var intent: Intent = Intent(applicationContext, CliBienvenidoActivity::class.java)
                 startActivity(intent)
             } else {
                 password.error = getString(R.string.error_incorrect_password)

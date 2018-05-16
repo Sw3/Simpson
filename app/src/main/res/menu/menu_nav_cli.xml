@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_seccion_5"
+            android:icon="@drawable/administar"
+            android:title="@string/missolicitudes" />
+        <item
+        android:id="@+id/menu_seccion_6"
+        android:icon="@drawable/administar"
+        android:title="@string/serviciosdispon" />
+    </group>
+    <item
+        android:id="@+id/navigation_subheader"
+        android:title="Más opciones">
+        <menu>
+            <item
+                android:id="@+id/menu_opcion_1"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+</menu>

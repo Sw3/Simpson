@@ -35,6 +35,7 @@
         <activity android:name=".activity.CSolicitud.CSolicitudsActivity" />
         <activity android:name=".activity.CSolicitud.DetalleCsolicitudActivity" />
         <activity android:name=".activity.Login.AdmBienvenidoActivity" />
+
         <activity android:name=".activity.Login.CliBienvenidoActivity" />
         <activity android:name=".activity.Login.RegistrarseActivity"></activity>
     </application>

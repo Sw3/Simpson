@@ -38,6 +38,8 @@
     <string name="error_invalid_password">Esta contraseña es demasiado corta</string>
     <string name="error_incorrect_password">Esta contraseña es incorrecta</string>
     <string name="error_field_required">Este campo es obligatorio</string>
-    <string name="permission_rationale">Acceso a contactos es necesario para autocompletar direcciones de correo."
-    </string>
+    <string name="permission_rationale">Acceso a contactos es necesario para autocompletar direcciones de correo." </string>
+    <string name="missolicitudes">Mis solicitudes</string>
+    <string name="serviciosdispon">Servicios disponibles</string>
+    <string name="msnbienvenidacli">Esta es la App oficial en la que podrá solicitar servicios de Bienestar universitario de la Universidad del Quindío. Para comenzar, deslice el dedo de izquierda a derecha para activar el menú.</string>
 </resources>
