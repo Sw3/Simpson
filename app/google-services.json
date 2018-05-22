@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "247423256822",
+    "firebase_url": "https://project-a2485.firebaseio.com",
+    "project_id": "project-a2485",
+    "storage_bucket": "project-a2485.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247423256822:android:fe56827e0d586c72",
+        "android_client_info": {
+          "package_name": "co.edu.uniquindio.android.electiva.proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247423256822-924v536o0fqgueoock5g27j1cbep1e04.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.uniquindio.android.electiva.proyecto",
+            "certificate_hash": "1c529d24c498d37b34a6ea52d73d860bd63e22fa"
+          }
+        },
+        {
+          "client_id": "247423256822-v9l2d5n8ugc8bgoi3cssbp83oadv3k5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByN7opteTBRGOjV-d6rfgXoD61Es4nRwY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247423256822-v9l2d5n8ugc8bgoi3cssbp83oadv3k5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.CServiciosActivity
@@ -68,7 +67,7 @@ class EncargadosActivity() : AppCompatActivity(), ListaDeEncargadosFragment.OnEn
         //finNavigation
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleEncargado)
 
-        lista = Repository().ListEncargados()
+        lista = ArrayList()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaEncargados) as ListaDeEncargadosFragment

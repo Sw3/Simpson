@@ -8,11 +8,19 @@ import java.util.*
  * Clase que representa un Cliente de tipo Parcelable
  * @author caflorezvi
  */
-class Encargado (var nombre:String, var cedula: String, var telefono : String) : Parcelable {
+class Encargado () : Parcelable {
 
     var id:String = ""
     var servicio_id = ""
+    var nombre:String= ""
+    var cedula: String= ""
+    var telefono : String = ""
 
+    constructor(nombre:String, cedula: String, telefono : String) : this() {
+        this.nombre = nombre
+        this.cedula = cedula
+        this.telefono = telefono
+    }
     constructor(parcel: Parcel) : this(
             parcel.readString(),
             parcel.readString(),

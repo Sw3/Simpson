@@ -11,18 +11,12 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio.DetalleDeCservicioFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio.ListaDeCServiciosFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
 import kotlinx.android.synthetic.main.activity_encargado.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 /**
@@ -68,7 +62,7 @@ class CServiciosActivity : AppCompatActivity(), ListaDeCServiciosFragment.OnCSer
 
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleCServicio)
 
-        lista = Repository().ListCServicios()
+        lista = ArrayList()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaCServicios) as ListaDeCServiciosFragment

@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
@@ -20,7 +19,6 @@ import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.DetalleDeS
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.ListaDeSolicitudsFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.activity_encargado.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 /**
@@ -65,7 +63,7 @@ class SolicitudsActivity : AppCompatActivity(), ListaDeSolicitudsFragment.OnSoli
         //finNavigation
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleSolicitud)
 
-        lista = Repository().ListSolicitudes()
+        lista = ArrayList()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaSolicituds) as ListaDeSolicitudsFragment

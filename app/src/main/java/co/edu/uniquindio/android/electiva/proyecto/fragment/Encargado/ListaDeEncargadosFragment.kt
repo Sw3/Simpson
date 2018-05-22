@@ -7,7 +7,7 @@ import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
-import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeEncargado
@@ -19,15 +19,18 @@ import java.util.*
  * Fragmento que contiene la Lista de Encargados
  * @author caflorezvi
  */
-class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdaptadorDeEncargado, AgregarEncargadoFragment.EncargadoCreado {
-
-    override fun onEncargadoCreadoListener(encargado: Encargado) {
-        //Repository().addEncargado(encargado)
-        //lista = Repository().ListEncargados()
-        //val ft = fragmentManager.beginTransaction()
-        //ft.detach(this).attach(this).commit()
+class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdaptadorDeEncargado, AgregarEncargadoFragment.EncargadoCreado, ManagerFireBase.ActualizarAdaptadorEncargado {
+    override fun onActualizarAdaptador(encargado: Encargado) {
         lista.add(0, encargado)
         adaptador.notifyItemInserted(0)
+    }
+
+
+    //Firebase
+    lateinit var managerFB : ManagerFireBase
+    override fun onEncargadoCreadoListener(encargado: Encargado) {
+        managerFB!!.insertarEncargado(encargado)
+        managerFB.escucharFireBaseEncargado()
     }
 
     /**
@@ -54,11 +57,15 @@ class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdapta
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        //intancia serviciolistener
+        ManagerFireBase.instanciar(this)
+        managerFB = ManagerFireBase.instant!!
+        managerFB.listenerEncargado =  this
+        managerFB.escucharFireBaseEncargado()
+        //adapter
         adaptador = AdaptadorDeEncargado(this, lista)
         listaEncargados.adapter = adaptador
         listaEncargados.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {

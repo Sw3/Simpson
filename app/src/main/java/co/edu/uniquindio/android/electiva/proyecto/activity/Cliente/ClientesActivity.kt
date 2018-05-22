@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import co.edu.uniquindio.android.electiva.proyecto.Dao.Repository
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
@@ -20,7 +19,6 @@ import co.edu.uniquindio.android.electiva.proyecto.fragment.Cliente.DetalleDeCli
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Cliente.ListaDeClientesFragment
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
 import kotlinx.android.synthetic.main.activity_encargado.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 /**
@@ -65,7 +63,7 @@ class ClientesActivity : AppCompatActivity(), ListaDeClientesFragment.OnClienteS
         //finNavigation
         fragment = supportFragmentManager.findFragmentById(R.id.fragmentoDetalleCliente)
 
-        lista = Repository().ListClientes()
+        lista = ArrayList()
 
 
         val fragmentLista = supportFragmentManager.findFragmentById(R.id.fragmentoListaClientes) as ListaDeClientesFragment

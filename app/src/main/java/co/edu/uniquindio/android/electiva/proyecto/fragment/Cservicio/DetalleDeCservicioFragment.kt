@@ -1,17 +1,18 @@
 package co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio
 
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
+import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.fragment_detalle_de_cservicio.*
+import java.util.*
 
 /**
  * Fragmento que muestra el detalle de un cservicio
@@ -31,8 +32,8 @@ class DetalleDeCservicioFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
-        startActivity(intent)
+        //Repository().addSolicitudes(Solicitud("", Date(), "1", "N/A", ""))
+        //Toast.makeText(this.context, "solicitud agregada", Toast.LENGTH_LONG).show()
     }
 
     /**

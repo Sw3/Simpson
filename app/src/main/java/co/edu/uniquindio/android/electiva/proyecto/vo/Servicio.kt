@@ -8,10 +8,24 @@ import java.util.*
  * Clase que representa un Servicio de tipo Parcelable
  * @author caflorezvi
  */
-class Servicio (var nombre:String, var foto: String, var ubicacion : String, var tipoServicio : String, var descripcion:String, var horario : String ) : Parcelable {
+class Servicio ( ) : Parcelable {
 
     var id:String = ""
+    var nombre: String = ""
+    var foto: String = ""
+    var ubicacion : String = ""
+    var tipoServicio : String = ""
+    var descripcion:String = ""
+    var horario : String = ""
 
+    constructor(nombre: String, foto: String, ubicacion : String,tipoServicio : String, descripcion:String, horario : String ) : this() {
+        this.nombre=nombre
+        this.foto=foto
+        this.ubicacion=ubicacion
+        this.tipoServicio = tipoServicio
+        this.descripcion=descripcion
+        this.horario = horario
+    }
     constructor(parcel: Parcel) : this(
             parcel.readString(),
             parcel.readString(),
