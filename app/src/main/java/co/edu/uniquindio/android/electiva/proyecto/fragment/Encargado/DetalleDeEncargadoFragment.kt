@@ -59,6 +59,7 @@ class DetalleDeEncargadoFragment : Fragment(), View.OnClickListener {
         encargado_detalle_cedula.text = getString(R.string.cedula) +": "+encargado.cedula
         encargado_detalle_telefono.text = getString(R.string.telefono) + ": "+ encargado.telefono
         btnIrAVideo.setOnClickListener(this)
+        btn_borrar_encargado.setOnClickListener(this)
     }
 
 }

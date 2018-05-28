@@ -66,7 +66,7 @@ object ManagerFireBase {
 
     //eliminadores
     fun borrarEncargado(encargado: Encargado){
-        dataRef!!.child("servicio").child(encargado.id).removeValue()
+        dataRef!!.child("encargado").child(encargado.id).removeValue()
     }
     fun borrarServicio(servicio: Servicio){
         dataRef!!.child("servicio").child(servicio.id).removeValue()
