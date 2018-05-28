@@ -46,4 +46,6 @@
 
     <string name="com.twitter.sdk.android.CONSUMER_KEY">Bfeu3ZGx6V6fxb4dmqKSKHWKX</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">SSEgUgxr1k4elr5K388f4MX66mBHlOqeWlQwdQuLhxAfsCvoq6</string>
+    <string name="title_activity_editar_servicio">EditarServicio</string>
+    <string name="Editar">Editar</string>
 </resources>

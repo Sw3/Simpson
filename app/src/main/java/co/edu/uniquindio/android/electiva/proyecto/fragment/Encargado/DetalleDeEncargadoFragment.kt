@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EditarEncargado
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.EditarServicio
 import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
 import kotlinx.android.synthetic.main.fragment_detalle_de_encargado.*
 
@@ -31,7 +33,8 @@ class DetalleDeEncargadoFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
+        val intent= Intent(this.context, EditarEncargado::class.java)
+        intent.putExtra("encargado", encargado)
         startActivity(intent)
     }
 

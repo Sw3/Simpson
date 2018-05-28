@@ -4,12 +4,14 @@ package co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Parcelable
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.EditarServicio
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.*
 
@@ -31,8 +33,14 @@ class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
+        //var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
+        //startActivity(intent)
+
+        val intent= Intent(this.context, EditarServicio::class.java)
+        intent.putExtra("servicio", servicio)
         startActivity(intent)
+
+
     }
 
     /**
@@ -48,7 +56,7 @@ class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
         servicio_detalle_tipo.text = getString(R.string.tipo) + ": "+servicio.tipoServicio
 
 
-        btnIrAVideo.setOnClickListener(this)
+        btnEditarServicio.setOnClickListener(this)
     }
 
 }
