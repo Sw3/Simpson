@@ -25,12 +25,11 @@ class ListaDeEncargadosFragment : Fragment(), AdaptadorDeEncargado.OnClickAdapta
         adaptador.notifyItemInserted(0)
     }
 
-
     //Firebase
     lateinit var managerFB : ManagerFireBase
     override fun onEncargadoCreadoListener(encargado: Encargado) {
         managerFB!!.insertarEncargado(encargado)
-        managerFB.escucharFireBaseEncargado()
+       // managerFB.escucharFireBaseEncargado()
     }
 
     /**

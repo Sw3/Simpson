@@ -38,6 +38,9 @@
 
         <activity android:name=".activity.Login.CliBienvenidoActivity" />
         <activity android:name=".activity.Login.RegistrarseActivity"></activity>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
     </application>
 
 </manifest>

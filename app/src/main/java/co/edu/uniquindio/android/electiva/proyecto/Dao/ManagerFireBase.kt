@@ -34,10 +34,10 @@ object ManagerFireBase {
         }
     }
     fun insertarServicio(servicio:Servicio){
-        dataRef!!.push().setValue(servicio)
+        dataRef!!.child("servicio").push().setValue(servicio)
     }
     fun insertarEncargado(encargado: Encargado){
-        dataRef!!.push().setValue(encargado)
+        dataRef!!.child("encargado").push().setValue(encargado)
     }
     fun insertarCliente(cliente: Cliente){
         dataRef!!.push().setValue(cliente)
@@ -49,7 +49,7 @@ object ManagerFireBase {
 
     //Ecuchadores de objetos
     fun escucharFireBaseServicio(){
-        dataRef!!.addChildEventListener(object: ChildEventListener {
+        dataRef!!.child("servicio").addChildEventListener(object: ChildEventListener {
             override fun onCancelled(p0: DatabaseError?) {}
             override fun onChildMoved(p0: DataSnapshot?, p1: String?) {}
             override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
@@ -84,7 +84,7 @@ object ManagerFireBase {
     }
 
     fun escucharFireBaseEncargado(){
-        dataRef!!.addChildEventListener(object: ChildEventListener {
+        dataRef!!.child("encargado").addChildEventListener(object: ChildEventListener {
             override fun onCancelled(p0: DatabaseError?) {}
             override fun onChildMoved(p0: DataSnapshot?, p1: String?) {}
             override fun onChildChanged(p0: DataSnapshot?, p1: String?) {

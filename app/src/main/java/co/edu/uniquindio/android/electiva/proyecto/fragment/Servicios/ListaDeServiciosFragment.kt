@@ -30,7 +30,7 @@ class ListaDeServiciosFragment : Fragment(), AdaptadorDeServicio.OnClickAdaptado
     lateinit var managerFB : ManagerFireBase
     override fun onServicioCreadoListener(servicio: Servicio) {
         managerFB!!.insertarServicio(servicio)
-        managerFB.escucharFireBaseServicio()
+        //managerFB.escucharFireBaseServicio()
     }
 
     /**

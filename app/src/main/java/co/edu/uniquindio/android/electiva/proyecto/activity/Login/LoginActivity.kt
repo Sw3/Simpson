@@ -25,6 +25,7 @@ import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -41,6 +42,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         // Set up the login form.
+
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {

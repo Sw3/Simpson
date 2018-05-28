@@ -42,4 +42,8 @@
     <string name="missolicitudes">Mis solicitudes</string>
     <string name="serviciosdispon">Servicios disponibles</string>
     <string name="msnbienvenidacli">Esta es la App oficial en la que podrá solicitar servicios de Bienestar universitario de la Universidad del Quindío. Para comenzar, deslice el dedo de izquierda a derecha para activar el menú.</string>
+    <string name="facebook_app_id">232153464219293</string>
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">Bfeu3ZGx6V6fxb4dmqKSKHWKX</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">SSEgUgxr1k4elr5K388f4MX66mBHlOqeWlQwdQuLhxAfsCvoq6</string>
 </resources>
