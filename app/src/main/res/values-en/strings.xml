@@ -44,4 +44,5 @@
     <string name="serviciosdispon">Services aviables</string>
     <string name="msnbienvenidacli" >This is the official app to reserve services from the University of Quindío. To start, slide your finger from left to right to activate the menu.</string>
     <string name="Editar">Edit</string>
+    <string name="borrar">Delete</string>
 </resources>

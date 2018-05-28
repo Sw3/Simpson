@@ -8,9 +8,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EditarEncargado
+import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.EditarServicio
 import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
 import kotlinx.android.synthetic.main.fragment_detalle_de_encargado.*
@@ -22,6 +24,8 @@ import kotlinx.android.synthetic.main.fragment_detalle_de_encargado.*
 class DetalleDeEncargadoFragment : Fragment(), View.OnClickListener {
 
     lateinit var encargado:Encargado
+    lateinit var managerFB : ManagerFireBase
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,9 +37,17 @@ class DetalleDeEncargadoFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        val intent= Intent(this.context, EditarEncargado::class.java)
-        intent.putExtra("encargado", encargado)
-        startActivity(intent)
+        if(v?.id ==  btnIrAVideo.id){
+            val intent= Intent(this.context, EditarEncargado::class.java)
+            intent.putExtra("encargado", encargado)
+            startActivity(intent)
+        }else{
+            managerFB = ManagerFireBase.instant!!
+            managerFB.borrarEncargado(encargado)
+
+            var intent = Intent(this.context, EncargadosActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     /**

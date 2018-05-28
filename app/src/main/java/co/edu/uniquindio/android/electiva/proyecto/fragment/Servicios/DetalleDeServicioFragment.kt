@@ -9,10 +9,14 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.EditarServicio
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
+import kotlinx.android.synthetic.main.fragment_detalle_de_encargado.*
 import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.*
 
 /**
@@ -22,6 +26,7 @@ import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.*
 class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
 
     lateinit var servicio:Servicio
+    lateinit var managerFB : ManagerFireBase
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,12 +38,18 @@ class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        //var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
-        //startActivity(intent)
+        if(v?.id == btnEditarServicio.id){
+            val intent= Intent(this.context, EditarServicio::class.java)
+            intent.putExtra("servicio", servicio)
+            startActivity(intent)
+        }
+        else{
+            managerFB = ManagerFireBase.instant!!
+            managerFB.borrarServicio(servicio)
 
-        val intent= Intent(this.context, EditarServicio::class.java)
-        intent.putExtra("servicio", servicio)
-        startActivity(intent)
+            var intent = Intent(this.context, ServiciosActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
@@ -57,6 +68,7 @@ class DetalleDeServicioFragment : Fragment(), View.OnClickListener {
 
 
         btnEditarServicio.setOnClickListener(this)
+        btn_borrar_servicio.setOnClickListener(this)
     }
 
 }

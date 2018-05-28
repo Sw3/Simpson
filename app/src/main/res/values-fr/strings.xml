@@ -42,5 +42,6 @@
     <string name="serviciosdispon">Services en disponibilité</string>
     <string name="msnbienvenidacli">Ceci est l´appli dans laquelle vous pourriez reserver des services du Bien-être Universitaire du Université du Quindío. Pour commencer, faites glisser votre doigt de gauche à droite pour activer le menu.</string>
     <string name="Editar">Éditer</string>
+    <string name="borrar">Efacer</string>
 </resources>
 

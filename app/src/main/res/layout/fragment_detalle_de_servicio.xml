@@ -78,6 +78,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="12dp"
                 android:text="@string/Editar" />
+
+            <Button
+                android:id="@+id/btn_borrar_servicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="12dp"
+                android:text="@string/borrar" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
