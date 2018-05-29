@@ -10,6 +10,7 @@ import android.view.*
 import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.AgregarEncargadoFragment
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeServicio
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import kotlinx.android.synthetic.main.fragment_lista_de_servicio.*
@@ -82,6 +83,18 @@ class ListaDeServiciosFragment : Fragment(), AdaptadorDeServicio.OnClickAdaptado
      */
     interface OnServicioSeleccionadoListener{
         fun onServicioSeleccionado(pos:Int)
+    }
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        when(item?.itemId){
+            R.id.menu_agregar -> {
+                var dialogo = AgregarServicioFragment()
+                dialogo.listener = this
+                dialogo.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogoTitulo)
+                dialogo.show(fragmentManager, "AgregarServicio")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

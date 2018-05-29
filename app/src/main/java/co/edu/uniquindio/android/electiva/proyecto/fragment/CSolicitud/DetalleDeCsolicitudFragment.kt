@@ -8,8 +8,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.vo.Csolicitud
 import kotlinx.android.synthetic.main.fragment_detalle_de_csolicitud.*
 
@@ -20,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_detalle_de_csolicitud.*
 class DetalleDeCsolicitudFragment : Fragment(), View.OnClickListener {
 
     lateinit var csolicitud:Csolicitud
+    lateinit var managerFB : ManagerFireBase
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -31,7 +35,10 @@ class DetalleDeCsolicitudFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
+        managerFB = ManagerFireBase.instant!!
+        managerFB.borrarCsolicitud(csolicitud)
+
+        var intent = Intent(this.context, CSolicitudsActivity::class.java)
         startActivity(intent)
     }
 

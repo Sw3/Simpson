@@ -2,10 +2,7 @@ package co.edu.uniquindio.android.electiva.proyecto.Dao
 
 import android.support.v4.app.Fragment
 import android.util.Log
-import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
-import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
-import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
-import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
+import co.edu.uniquindio.android.electiva.proyecto.vo.*
 import com.google.firebase.database.*
 
 object ManagerFireBase {
@@ -47,7 +44,9 @@ object ManagerFireBase {
     fun insertarCliente(cliente: Cliente) {
         dataRef!!.child("cliente").push().setValue(cliente)
     }
-
+    fun test(){
+        dataRef!!
+    }
     fun insertarSolicitud(solicitud: Solicitud) {
         dataRef!!.child("solicitud").push().setValue(solicitud)
     }
@@ -80,10 +79,13 @@ object ManagerFireBase {
     fun borrarSolicitud(solicitud: Solicitud) {
         dataRef!!.child("solicitud").child(solicitud.id).removeValue()
     }
+    fun borrarCsolicitud(solicitud: Csolicitud) {
+        dataRef!!.child("solicitud").child(solicitud.id).removeValue()
+    }
+
     fun borrarCliente(cliente: Cliente) {
         dataRef!!.child("cliente").child(cliente.id).removeValue()
     }
-
 
     //Ecuchadores de objetos
     fun escucharFireBaseServicio() {
@@ -165,6 +167,7 @@ object ManagerFireBase {
             }
         })
     }
+
 
     //Interfaces de escucha
     interface ActualizarAdaptadorServicio {
