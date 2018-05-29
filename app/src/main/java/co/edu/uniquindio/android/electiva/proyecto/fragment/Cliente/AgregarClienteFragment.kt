@@ -52,7 +52,7 @@ class AgregarClienteFragment : DialogFragment(), View.OnClickListener, Calendari
 
 
             if( !nombre.isEmpty() && !cedula.isEmpty() && !email.isEmpty() && !dependencia.isEmpty() && !telefono.isEmpty() ){
-                listener.onClienteCreadoListener(Cliente(nombre,cedula,"cli",email,dependencia,telefono, ""))
+                listener.onClienteCreadoListener(Cliente(nombre,cedula,"adm",email,dependencia,telefono, ""))
                 dismiss()
             }
 
