@@ -8,36 +8,34 @@ import java.util.*
  * Clase que representa un Solicitud de tipo Parcelable
  * @author caflorezvi
  */
-class Solicitud (var nombre:String, var fecha:Date) : Parcelable {
+class Solicitud () : Parcelable {
 
+    var fecha:Date = Date()
     var id:String = ""
-    var descripcion:String = "Descripción"
-    var urlVideo:String = ""
+    var solicitante = ""
+    var servicio = ""
 
-    constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readSerializable() as Date) {
+
+    constructor(parcel: Parcel) : this() {
+        parcel.readSerializable() as Date
         id = parcel.readString()
-        descripcion = parcel.readString()
-        urlVideo = parcel.readString()
+        solicitante = parcel.readString()
+        servicio = parcel.readString()
+
     }
 
-    constructor( nombre:String, fecha:Date, id:String, descripcion:String, urlVideo:String ) : this(nombre, fecha){
+    constructor(fecha:Date, solicitante : String, servicio : String  ) : this(){
+        this.fecha =fecha
         this.id = id
-        this.descripcion = descripcion
-        this.urlVideo = urlVideo
-    }
-
-    override fun toString(): String {
-        return "[${nombre}, ${fecha.toString()}]"
+        this.solicitante = solicitante
+        this.servicio = servicio
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(nombre)
         parcel.writeSerializable(fecha)
         parcel.writeString(id)
-        parcel.writeString(descripcion)
-        parcel.writeString(urlVideo)
+        parcel.writeString(solicitante)
+        parcel.writeString(servicio)
     }
 
     override fun describeContents(): Int {

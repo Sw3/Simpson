@@ -42,27 +42,6 @@ class AgregarCservicioFragment : DialogFragment(), View.OnClickListener, Calenda
 
     override fun onClick(v: View?) {
 
-        if(v?.id == vista.cservicio_agregar_calendario.id){
-            var calen = CalendarioFragment()
-            calen.listener = this
-            calen.show(fragmentManager, "Calendario")
-        }
-
-        if(v?.id == vista.agregar_cservicio.id){
-
-            val nombre:String = vista.cservicio_detalle_nombre.text.toString()
-            val descripcion:String = vista.cservicio_detalle_titulo.text.toString()
-            val url:String = vista.url_formulario.text.toString()
-
-            if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
-/**
-                var cservicio = Cservicio(nombre, fecha, "", descripcion, url)
-                listener.onCServicioCreadoListener(cservicio)
-                **/
-                dismiss()
-            }
-
-        }
 
     }
 

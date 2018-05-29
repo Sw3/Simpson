@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.R.id.solicitud_detalle_fecha
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.resumen_solicitud.view.*
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Solicitud.ListaDeSolicitudsFragment
+import kotlinx.android.synthetic.main.fragment_detalle_de_solicitud.view.*
 
 /**
  * Clase que representa el Adaptador para el recycler view de Solicituds
@@ -37,8 +39,9 @@ class AdaptadorDeSolicitud(var solicituds:ArrayList<Solicitud>) : RecyclerView.A
 
     inner class SolicitudViewHolder : RecyclerView.ViewHolder, View.OnClickListener {
 
-        val nombre:TextView = itemView.solicitud_resumen_nombre
-        val fechaNacimiento:TextView = itemView.solicitud_resumen_fecha_nacimiento
+        val servicio:TextView = itemView.solicitud_detalle_servicioSolicitado
+        val usuario: TextView = itemView.solicitud_detalle_solicitante
+        val fecha:TextView = itemView.solicitud_resumen_fecha_nacimiento
 
         constructor(itemView:View) : super(itemView){
             itemView.setOnClickListener(this)
@@ -49,8 +52,10 @@ class AdaptadorDeSolicitud(var solicituds:ArrayList<Solicitud>) : RecyclerView.A
         }
 
         fun bindSolicitud(solicitud:Solicitud){
-            nombre.text = solicitud.nombre
-            fechaNacimiento.text = solicitud.fecha.toString()
+
+            fecha.text = solicitud.fecha.toString()
+            usuario.text = solicitud.solicitante
+            servicio.text = solicitud.servicio
         }
     }
 

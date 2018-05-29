@@ -5,6 +5,8 @@ import android.content.pm.PackageManager
 import android.util.Base64
 import android.util.Log
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
+import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import com.twitter.sdk.android.core.DefaultLogger
 import com.twitter.sdk.android.core.Twitter
 import com.twitter.sdk.android.core.TwitterAuthConfig
@@ -34,6 +36,10 @@ class Utilidades {
             } catch (e: NoSuchAlgorithmException) {
                 Log.d("prueba", "2 KeyHash Error: " + e.message)
             }
+        }
+
+        fun ConvertirServToCServ(servicio: Servicio): Cservicio {
+            return Cservicio(servicio.nombre, servicio.foto, servicio.ubicacion, servicio.tipoServicio, servicio.descripcion, servicio.horario,servicio.id)
         }
     }
 

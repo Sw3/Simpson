@@ -32,7 +32,39 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/cservicio_detalle_nombre"
+                android:id="@+id/cservicio_detalle_descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cservicio_detalle_ubicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cservicio_detalle_recursos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cservicio_detalle_horario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:maxLines="30"
+                android:text="@string/texto_detalle_de_personaje"
+                android:textSize="@dimen/detalle_texto_descripción" />
+            <TextView
+                android:id="@+id/cservicio_detalle_tipo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -40,12 +72,14 @@
                 android:text="@string/texto_detalle_de_personaje"
                 android:textSize="@dimen/detalle_texto_descripción" />
             <Button
-                android:id="@+id/btnIrAVideo"
+                android:id="@+id/btnReservarServicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="12dp"
                 android:text="@string/reservar" />
+
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

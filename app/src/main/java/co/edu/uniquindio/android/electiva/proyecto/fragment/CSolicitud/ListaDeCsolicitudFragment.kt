@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeCsolicitud
@@ -19,6 +20,9 @@ import java.util.*
  * @author caflorezvi
  */
 class ListaDeCSolicitudsFragment : Fragment(), AdaptadorDeCsolicitud.OnClickAdaptadorDeCSolicitud, AgregarCsolicitudFragment.CSolicitudCreado {
+
+    lateinit var managerFB : ManagerFireBase
+
 
     override fun onCSolicitudCreadoListener(csolicitud: Csolicitud) {
         lista.add(0, csolicitud)

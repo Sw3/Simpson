@@ -12,6 +12,7 @@ import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.fragment_detalle_de_cservicio.*
+import kotlinx.android.synthetic.main.fragment_detalle_de_servicio.*
 import java.util.*
 
 /**
@@ -32,8 +33,7 @@ class DetalleDeCservicioFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        //Repository().addSolicitudes(Solicitud("", Date(), "1", "N/A", ""))
-        //Toast.makeText(this.context, "solicitud agregada", Toast.LENGTH_LONG).show()
+
     }
 
     /**
@@ -42,7 +42,13 @@ class DetalleDeCservicioFragment : Fragment(), View.OnClickListener {
     fun darDetalle(cservicio: Cservicio) {
         this.cservicio = cservicio
         cservicio_detalle_titulo.text = cservicio.nombre
-        btnIrAVideo.setOnClickListener(this)
+        cservicio_detalle_recursos.text = "recursos"
+        cservicio_detalle_descripcion.text = getString(R.string.descripcion) + ": "+cservicio.descripcion
+        cservicio_detalle_horario.text = getString(R.string.horario) + ": "+cservicio.horario
+        cservicio_detalle_ubicacion.text = getString(R.string.ubicacion) + ": "+cservicio.ubicacion
+        cservicio_detalle_tipo.text = getString(R.string.tipo) + ": "+cservicio.tipoServicio
+
+        btnReservarServicio.setOnClickListener(this)
     }
 
 }

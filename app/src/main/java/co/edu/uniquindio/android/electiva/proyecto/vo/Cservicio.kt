@@ -8,10 +8,24 @@ import java.util.*
  * Clase que representa un CServicio de tipo Parcelable
  * @author caflorezvi
  */
-class Cservicio (var nombre:String, var foto: String, var ubicacion : String, var tipoServicio : String, var descripcion:String, var horario : String ) : Parcelable {
+class Cservicio ( ) : Parcelable {
 
     var id:String = ""
+    var nombre: String = ""
+    var foto: String = ""
+    var ubicacion : String = ""
+    var tipoServicio : String = ""
+    var descripcion:String = ""
+    var horario : String = ""
 
+    constructor(nombre: String, foto: String, ubicacion : String,tipoServicio : String, descripcion:String, horario : String ) : this() {
+        this.nombre=nombre
+        this.foto=foto
+        this.ubicacion=ubicacion
+        this.tipoServicio = tipoServicio
+        this.descripcion=descripcion
+        this.horario = horario
+    }
     constructor(parcel: Parcel) : this(
             parcel.readString(),
             parcel.readString(),
@@ -20,6 +34,16 @@ class Cservicio (var nombre:String, var foto: String, var ubicacion : String, va
             parcel.readString(),
             parcel.readString()) {
         id = parcel.readString()
+    }
+
+    constructor(nombre: String, foto: String, ubicacion: String, tipoServicio: String, descripcion: String, horario: String, id: String):this(){
+        this.nombre=nombre
+        this.foto=foto
+        this.ubicacion=ubicacion
+        this.tipoServicio = tipoServicio
+        this.descripcion=descripcion
+        this.horario = horario
+        this.id = id
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -36,12 +60,12 @@ class Cservicio (var nombre:String, var foto: String, var ubicacion : String, va
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Cservicio> {
-        override fun createFromParcel(parcel: Parcel): Cservicio {
-            return Cservicio(parcel)
+    companion object CREATOR : Parcelable.Creator<Servicio> {
+        override fun createFromParcel(parcel: Parcel): Servicio {
+            return Servicio(parcel)
         }
 
-        override fun newArray(size: Int): Array<Cservicio?> {
+        override fun newArray(size: Int): Array<Servicio?> {
             return arrayOfNulls(size)
         }
     }

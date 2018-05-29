@@ -69,9 +69,6 @@ class ListaDeServiciosFragment : Fragment(), AdaptadorDeServicio.OnClickAdaptado
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-    }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -79,25 +76,6 @@ class ListaDeServiciosFragment : Fragment(), AdaptadorDeServicio.OnClickAdaptado
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-
-        when(item?.itemId){
-
-            R.id.menu_agregar -> {
-
-                var dialogo = AgregarServicioFragment()
-                dialogo.listener = this
-                dialogo.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogoTitulo)
-                dialogo.show(fragmentManager, "AgregarServicio")
-                //lista.add(0, Servicio("Ayudante de Santa", Date()))
-                //adaptador.notifyItemInserted(0)
-            }
-
-
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
 
     /**
      * Interface que sirve como listener para los eventos del dialogo

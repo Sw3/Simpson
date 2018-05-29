@@ -15,6 +15,7 @@ import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio.DetalleDeCservicioFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio.ListaDeCServiciosFragment
+import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
 import kotlinx.android.synthetic.main.activity_encargado.*
 import kotlin.collections.ArrayList
@@ -37,7 +38,8 @@ class CServiciosActivity : AppCompatActivity(), ListaDeCServiciosFragment.OnCSer
             (fragment as DetalleDeCservicioFragment).darDetalle(lista[pos])
         }else{
             var intent:Intent = Intent(this, DetalleCservicioActivity::class.java)
-            intent.putExtra("cservicio", lista.get(pos))
+            val objeto : Cservicio = lista.get(pos)
+            intent.putExtra("cservicio", objeto)
             startActivity(intent)
         }
 

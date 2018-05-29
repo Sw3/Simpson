@@ -8,8 +8,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.EditarServicio
+import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.fragment_detalle_de_solicitud.*
 
@@ -20,6 +24,7 @@ import kotlinx.android.synthetic.main.fragment_detalle_de_solicitud.*
 class DetalleDeSolicitudFragment : Fragment(), View.OnClickListener {
 
     lateinit var solicitud:Solicitud
+    lateinit var managerFB : ManagerFireBase
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -31,8 +36,19 @@ class DetalleDeSolicitudFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
-        startActivity(intent)
+        if(v?.id == btn_solicitud_borrar.id){
+
+            managerFB = ManagerFireBase.instant!!
+            managerFB.borrarSolicitud(solicitud)
+
+            var intent = Intent(this.context, SolicitudsActivity::class.java)
+            startActivity(intent)
+        }else{
+            val intent= Intent(this.context, EditarServicio::class.java)
+            intent.putExtra("solicitud", solicitud)
+            startActivity(intent)
+        }
+
     }
 
     /**
@@ -40,8 +56,12 @@ class DetalleDeSolicitudFragment : Fragment(), View.OnClickListener {
      */
     fun darDetalle(solicitud: Solicitud) {
         this.solicitud = solicitud
-        solicitud_detalle_titulo.text = solicitud.nombre
-        btnIrAVideo.setOnClickListener(this)
+        solicitud_detalle_solicitante.text = solicitud.solicitante
+        solicitud_detalle_fecha.text = solicitud.fecha.toString()
+        solicitud_detalle_servicioSolicitado.text = solicitud.servicio
+
+        btn_solicitud_editar.setOnClickListener(this)
+        btn_solicitud_borrar.setOnClickListener(this)
     }
 
 }

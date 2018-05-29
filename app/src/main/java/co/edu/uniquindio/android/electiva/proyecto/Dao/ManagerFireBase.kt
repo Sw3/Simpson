@@ -72,6 +72,11 @@ object ManagerFireBase {
         dataRef!!.child("servicio").child(servicio.id).removeValue()
     }
 
+    fun borrarSolicitud(solicitud: Solicitud) {
+        dataRef!!.child("solicitud").child(solicitud.id).removeValue()
+    }
+
+
     //Ecuchadores de objetos
     fun escucharFireBaseServicio() {
         dataRef!!.child("servicio").addChildEventListener(object : ChildEventListener {
@@ -92,6 +97,8 @@ object ManagerFireBase {
             }
         })
     }
+
+
 
     fun escucharFireBaseCliente() {
         dataRef!!.addChildEventListener(object : ChildEventListener {
@@ -153,6 +160,7 @@ object ManagerFireBase {
             }
         })
     }
+
 
     //Interfaces de escucha
     interface ActualizarAdaptadorServicio {

@@ -41,7 +41,6 @@ class AgregarSolicitudFragment : DialogFragment(), View.OnClickListener, Calenda
     }
 
     override fun onClick(v: View?) {
-
         if(v?.id == vista.solicitud_agregar_calendario.id){
             var calen = CalendarioFragment()
             calen.listener = this
@@ -49,20 +48,15 @@ class AgregarSolicitudFragment : DialogFragment(), View.OnClickListener, Calenda
         }
 
         if(v?.id == vista.agregar_solicitud.id){
-
-            val nombre:String = vista.solicitud_detalle_nombre.text.toString()
+            val nombre:String = vista.solicitud_detalle_solicitante.text.toString()
             val descripcion:String = vista.solicitud_detalle_titulo.text.toString()
             val url:String = vista.url_formulario.text.toString()
-
             if(fecha!=null && !nombre.isEmpty() && !descripcion.isEmpty() && !url.isEmpty()){
-
-                var solicitud = Solicitud(nombre, fecha, "", descripcion, url)
+                var solicitud = Solicitud(Date(),"","")
                 listener.onSolicitudCreadoListener(solicitud)
                 dismiss()
             }
-
         }
-
     }
 
     /**
