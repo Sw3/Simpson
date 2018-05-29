@@ -39,9 +39,9 @@ class AdaptadorDeSolicitud(var solicituds:ArrayList<Solicitud>) : RecyclerView.A
 
     inner class SolicitudViewHolder : RecyclerView.ViewHolder, View.OnClickListener {
 
-        val servicio:TextView = itemView.solicitud_detalle_servicioSolicitado
-        val usuario: TextView = itemView.solicitud_detalle_solicitante
-        val fecha:TextView = itemView.solicitud_resumen_fecha_nacimiento
+        val servicio:TextView = itemView.solicitud_resumen_nombre
+        val usuario: TextView = itemView.solicitud_resumen_fecha_nacimiento
+        //val fecha:TextView = itemView.solicitud_resumen_fecha_nacimiento
 
         constructor(itemView:View) : super(itemView){
             itemView.setOnClickListener(this)
@@ -53,7 +53,7 @@ class AdaptadorDeSolicitud(var solicituds:ArrayList<Solicitud>) : RecyclerView.A
 
         fun bindSolicitud(solicitud:Solicitud){
 
-            fecha.text = solicitud.fecha.toString()
+           // fecha.text = solicitud.fecha.toString()
             usuario.text = solicitud.solicitante
             servicio.text = solicitud.servicio
         }

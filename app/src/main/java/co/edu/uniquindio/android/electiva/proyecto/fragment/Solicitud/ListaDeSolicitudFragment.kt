@@ -7,9 +7,11 @@ import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeSolicitud
+import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.fragment_lista_de_solicitud.*
 import java.util.*
@@ -18,11 +20,18 @@ import java.util.*
  * Fragmento que contiene la Lista de Solicituds
  * @author caflorezvi
  */
-class ListaDeSolicitudsFragment : Fragment(), AdaptadorDeSolicitud.OnClickAdaptadorDeSolicitud, AgregarSolicitudFragment.SolicitudCreado {
+class ListaDeSolicitudsFragment : Fragment(), AdaptadorDeSolicitud.OnClickAdaptadorDeSolicitud, AgregarSolicitudFragment.SolicitudCreado, ManagerFireBase.ActualizarAdaptadorSolicitud {
 
-    override fun onSolicitudCreadoListener(solicitud: Solicitud) {
+
+    lateinit var managerFB : ManagerFireBase
+
+    override fun onActualizarAdaptador(solicitud: Solicitud) {
         lista.add(0, solicitud)
         adaptador.notifyItemInserted(0)
+    }
+
+    override fun onSolicitudCreadoListener(solicitud: Solicitud) {
+        managerFB!!.insertarSolicitud(solicitud)
     }
 
     /**
@@ -49,6 +58,11 @@ class ListaDeSolicitudsFragment : Fragment(), AdaptadorDeSolicitud.OnClickAdapta
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        //intancia serviciolistener
+        ManagerFireBase.instanciar(this)
+        managerFB = ManagerFireBase.instant!!
+        managerFB.listenerSolicitud =  this
+        managerFB.escucharFireBaseSolicitud()
 
         adaptador = AdaptadorDeSolicitud(this, lista)
         listaSolicituds.adapter = adaptador
@@ -56,35 +70,12 @@ class ListaDeSolicitudsFragment : Fragment(), AdaptadorDeSolicitud.OnClickAdapta
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
-    }
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
         listener = context as OnSolicitudSeleccionadoListener
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-
-        when(item?.itemId){
-
-            R.id.menu_agregar -> {
-
-                var dialogo = AgregarSolicitudFragment()
-                dialogo.listener = this
-                dialogo.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogoTitulo)
-                dialogo.show(fragmentManager, "AgregarSolicitud")
-
-                //lista.add(0, Solicitud("Ayudante de Santa", Date()))
-                //adaptador.notifyItemInserted(0)
-            }
-
-
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
 
     /**
      * Interface que sirve como listener para los eventos del dialogo
