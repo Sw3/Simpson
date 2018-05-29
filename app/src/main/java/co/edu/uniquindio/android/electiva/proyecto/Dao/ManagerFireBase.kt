@@ -45,11 +45,11 @@ object ManagerFireBase {
     }
 
     fun insertarCliente(cliente: Cliente) {
-        dataRef!!.push().setValue(cliente)
+        dataRef!!.child("cliente").push().setValue(cliente)
     }
 
     fun insertarSolicitud(solicitud: Solicitud) {
-        dataRef!!.push().setValue(solicitud)
+        dataRef!!.child("solicitud").push().setValue(solicitud)
     }
 
     //editores
@@ -98,10 +98,8 @@ object ManagerFireBase {
         })
     }
 
-
-
     fun escucharFireBaseCliente() {
-        dataRef!!.addChildEventListener(object : ChildEventListener {
+        dataRef!!.child("cliente").addChildEventListener(object : ChildEventListener {
             override fun onCancelled(p0: DatabaseError?) {}
             override fun onChildMoved(p0: DataSnapshot?, p1: String?) {}
             override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
@@ -141,7 +139,7 @@ object ManagerFireBase {
     }
 
     fun escucharFireBaseSolicitud() {
-        dataRef!!.addChildEventListener(object : ChildEventListener {
+        dataRef!!.child("solicitud").addChildEventListener(object : ChildEventListener {
             override fun onCancelled(p0: DatabaseError?) {}
             override fun onChildMoved(p0: DataSnapshot?, p1: String?) {}
             override fun onChildChanged(p0: DataSnapshot?, p1: String?) {

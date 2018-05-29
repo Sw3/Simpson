@@ -26,6 +26,11 @@ class Solicitud () : Parcelable {
 
     constructor(fecha:Date, solicitante : String, servicio : String  ) : this(){
         this.fecha =fecha
+        this.solicitante = solicitante
+        this.servicio = servicio
+    }
+    constructor(fecha:Date, id: String, solicitante : String, servicio : String  ) : this(){
+        this.fecha =fecha
         this.id = id
         this.solicitante = solicitante
         this.servicio = servicio

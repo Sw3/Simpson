@@ -47,7 +47,7 @@
             android:label="@string/title_activity_editar_servicio"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.Encargado.EditarEncargado" />
-        <activity android:name=".activity.Solicitud.EditarSolicitudActivity"></activity>
+        <activity android:name=".activity.Solicitud.EditarSolicitudActivity" />
     </application>
 
 </manifest>

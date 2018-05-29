@@ -11,7 +11,10 @@ import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeCsolicitud
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
+import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Csolicitud
+import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.fragment_lista_de_csolicitud.*
 import java.util.*
 
@@ -19,7 +22,13 @@ import java.util.*
  * Fragmento que contiene la Lista de CSolicituds
  * @author caflorezvi
  */
-class ListaDeCSolicitudsFragment : Fragment(), AdaptadorDeCsolicitud.OnClickAdaptadorDeCSolicitud, AgregarCsolicitudFragment.CSolicitudCreado {
+class ListaDeCSolicitudsFragment : Fragment(), AdaptadorDeCsolicitud.OnClickAdaptadorDeCSolicitud, AgregarCsolicitudFragment.CSolicitudCreado, ManagerFireBase.ActualizarAdaptadorSolicitud {
+    override fun onActualizarAdaptador(solicitud: Solicitud) {
+        if(solicitud.solicitante == Sesion.clienteSesion!!.id){
+            lista.add(0, Utilidades.convertirSolicToCsolic(solicitud))
+            adaptador.notifyItemInserted(0)
+        }
+    }
 
     lateinit var managerFB : ManagerFireBase
 
@@ -53,6 +62,12 @@ class ListaDeCSolicitudsFragment : Fragment(), AdaptadorDeCsolicitud.OnClickAdap
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        //intancia serviciolistener
+        ManagerFireBase.instanciar(this)
+        managerFB = ManagerFireBase.instant!!
+        managerFB.listenerSolicitud =  this
+        managerFB.escucharFireBaseSolicitud()
 
         adaptador = AdaptadorDeCsolicitud(this, lista)
         listaCSolicituds.adapter = adaptador

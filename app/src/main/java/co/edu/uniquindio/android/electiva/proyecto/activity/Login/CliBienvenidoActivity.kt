@@ -12,13 +12,14 @@ import android.widget.Toast
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.CServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
-import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
-import kotlinx.android.synthetic.main.activity_encargado.*
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
+import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
+import kotlinx.android.synthetic.main.activity_cli_bienvenido.*
+
 
 class CliBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    lateinit var sesion : Sesion
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,9 @@ class CliBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         toggle.syncState()
         navview.itemIconTintList = null
         navview.setNavigationItemSelectedListener(this)
+        //Sesion.clienteSesion
+        val cli : Cliente = Sesion.clienteSesion!!
+        textView2.text = cli.nombre
 
         //finNavigation
     }

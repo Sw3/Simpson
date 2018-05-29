@@ -6,7 +6,9 @@ import android.util.Base64
 import android.util.Log
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
+import co.edu.uniquindio.android.electiva.proyecto.vo.Csolicitud
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
+import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import com.twitter.sdk.android.core.DefaultLogger
 import com.twitter.sdk.android.core.Twitter
 import com.twitter.sdk.android.core.TwitterAuthConfig
@@ -40,6 +42,9 @@ class Utilidades {
 
         fun ConvertirServToCServ(servicio: Servicio): Cservicio {
             return Cservicio(servicio.nombre, servicio.foto, servicio.ubicacion, servicio.tipoServicio, servicio.descripcion, servicio.horario,servicio.id)
+        }
+        fun convertirSolicToCsolic(solicitud: Solicitud):Csolicitud{
+            return Csolicitud(solicitud.fecha, solicitud.id, solicitud.solicitante, solicitud.servicio)
         }
     }
 

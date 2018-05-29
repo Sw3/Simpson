@@ -1,14 +1,20 @@
 package co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
+import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
 import co.edu.uniquindio.android.electiva.proyecto.vo.Solicitud
 import kotlinx.android.synthetic.main.fragment_detalle_de_cservicio.*
@@ -22,6 +28,7 @@ import java.util.*
 class DetalleDeCservicioFragment : Fragment(), View.OnClickListener {
 
     lateinit var cservicio:Cservicio
+    lateinit var managerFB : ManagerFireBase
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,7 +40,12 @@ class DetalleDeCservicioFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
+        managerFB = ManagerFireBase.instant!!
+        val cli : Cliente = Sesion.clienteSesion!!
+        managerFB.insertarSolicitud(Solicitud(Date(), cli.id, cservicio.id))
 
+        var intent = Intent(this.context, CSolicitudsActivity::class.java)
+        startActivity(intent)
     }
 
     /**

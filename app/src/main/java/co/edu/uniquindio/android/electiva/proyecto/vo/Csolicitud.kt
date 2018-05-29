@@ -8,38 +8,54 @@ import java.util.*
  * Clase que representa un CSolicitud de tipo Parcelable
  * @author caflorezvi
  */
-class Csolicitud (var persona:String, var fecha:Date, var servicio : String, var hora : String) : Parcelable {
+class Csolicitud () : Parcelable {
 
+    var fecha:Date = Date()
     var id:String = ""
+    var solicitante = ""
+    var servicio = ""
 
-    constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readSerializable() as Date,
-            parcel.readString(),
-            parcel.readString()) {
+
+    constructor(parcel: Parcel) : this() {
+        parcel.readSerializable() as Date
         id = parcel.readString()
+        solicitante = parcel.readString()
+        servicio = parcel.readString()
+
+    }
+
+    constructor(fecha:Date, solicitante : String, servicio : String  ) : this(){
+        this.fecha =fecha
+        this.solicitante = solicitante
+        this.servicio = servicio
+    }
+
+    constructor(fecha:Date, id:String, solicitante : String, servicio : String  ) : this(){
+        this.fecha =fecha
+        this.id = id
+        this.solicitante = solicitante
+        this.servicio = servicio
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(persona)
-        parcel.writeString(servicio)
-        parcel.writeString(hora)
+        parcel.writeSerializable(fecha)
         parcel.writeString(id)
+        parcel.writeString(solicitante)
+        parcel.writeString(servicio)
     }
 
     override fun describeContents(): Int {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Csolicitud> {
-        override fun createFromParcel(parcel: Parcel): Csolicitud {
-            return Csolicitud(parcel)
+    companion object CREATOR : Parcelable.Creator<Solicitud> {
+        override fun createFromParcel(parcel: Parcel): Solicitud {
+            return Solicitud(parcel)
         }
 
-        override fun newArray(size: Int): Array<Csolicitud?> {
+        override fun newArray(size: Int): Array<Solicitud?> {
             return arrayOfNulls(size)
         }
     }
-
 
 }
