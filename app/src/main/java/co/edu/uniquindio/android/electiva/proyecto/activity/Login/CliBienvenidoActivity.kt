@@ -54,6 +54,11 @@ class CliBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         when (item.itemId) {
             R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
             R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
+            R.id.menu_opcion_1 -> {
+                Sesion.cerrarSesion()
+                var intent:Intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
 
         }
         item.isChecked = true

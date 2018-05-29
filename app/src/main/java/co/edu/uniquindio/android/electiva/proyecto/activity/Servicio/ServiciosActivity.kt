@@ -14,9 +14,11 @@ import android.widget.Toast
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Login.LoginActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.DetalleDeServicioFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Servicio.ListaDeServiciosFragment
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
 import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import kotlinx.android.synthetic.main.activity_encargado.*
 import kotlin.collections.ArrayList
@@ -97,6 +99,11 @@ class ServiciosActivity : AppCompatActivity(), ListaDeServiciosFragment.OnServic
             R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
             R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
             R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
+            R.id.menu_opcion_1 -> {
+                Sesion.cerrarSesion()
+                var intent:Intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
 
         }
         item.isChecked = true

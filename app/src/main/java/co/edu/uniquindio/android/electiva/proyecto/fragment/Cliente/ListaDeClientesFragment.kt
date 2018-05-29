@@ -21,8 +21,14 @@ import java.util.*
  */
 class ListaDeClientesFragment : Fragment(), AdaptadorDeCliente.OnClickAdaptadorDeCliente, AgregarClienteFragment.ClienteCreado, ManagerFireBase.ActualizarAdaptadorCliente {
     override fun onActualizarAdaptador(cliente: Cliente) {
-        lista.add(0, cliente)
-        adaptador.notifyItemInserted(0)
+        var listado:Boolean = false
+        lista.forEach{if(it.id == cliente.id){
+            listado = true
+        }}
+        if(!listado){
+            lista.add(0, cliente)
+            adaptador.notifyItemInserted(0)
+        }
     }
 
 

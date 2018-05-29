@@ -16,5 +16,9 @@ object Sesion {
             inicializar(cliente)
         }
     }
+    fun cerrarSesion(){
+        sesion = null
+        clienteSesion = null
+    }
 
 }

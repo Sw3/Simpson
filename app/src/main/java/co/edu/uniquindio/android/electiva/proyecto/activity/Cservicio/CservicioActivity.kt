@@ -13,8 +13,10 @@ import android.view.MenuItem
 import android.widget.Toast
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Login.LoginActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio.DetalleDeCservicioFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CServicio.ListaDeCServiciosFragment
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
 import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cservicio
 import kotlinx.android.synthetic.main.activity_encargado.*
@@ -93,6 +95,11 @@ class CServiciosActivity : AppCompatActivity(), ListaDeCServiciosFragment.OnCSer
         when (item.itemId) {
             R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
             R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
+            R.id.menu_opcion_1 -> {
+                Sesion.cerrarSesion()
+                var intent:Intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
 
         }
         item.isChecked = true

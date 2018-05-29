@@ -15,10 +15,12 @@ import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.CServicio.CServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Login.LoginActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.DetalleDeEncargadoFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.Encargado.ListaDeEncargadosFragment
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
 import co.edu.uniquindio.android.electiva.proyecto.vo.Encargado
 import kotlinx.android.synthetic.main.activity_encargado.*
 import kotlin.collections.ArrayList
@@ -105,6 +107,11 @@ class EncargadosActivity() : AppCompatActivity(), ListaDeEncargadosFragment.OnEn
             R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
             R.id.menu_seccion_5 -> reemplazarFragmento(CServiciosActivity())
             R.id.menu_seccion_6 -> reemplazarFragmento(CSolicitudsActivity())
+            R.id.menu_opcion_1 -> {
+                Sesion.cerrarSesion()
+                var intent:Intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
         }
         item.isChecked = true
         drawer_layout.closeDrawer(GravityCompat.START)

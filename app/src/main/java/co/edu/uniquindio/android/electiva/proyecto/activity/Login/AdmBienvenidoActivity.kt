@@ -16,6 +16,7 @@ import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActi
 import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EncargadosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Servicio.ServiciosActivity
 import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.SolicitudsActivity
+import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
 import kotlinx.android.synthetic.main.activity_encargado.*
 
 class AdmBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -52,6 +53,11 @@ class AdmBienvenidoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
             R.id.menu_seccion_2 -> reemplazarFragmento(EncargadosActivity())
             R.id.menu_seccion_3 -> reemplazarFragmento(ServiciosActivity())
             R.id.menu_seccion_4 -> reemplazarFragmento(SolicitudsActivity())
+            R.id.menu_opcion_1 -> {
+                Sesion.cerrarSesion()
+                var intent:Intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
 
         }
         item.isChecked = true
