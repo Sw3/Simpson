@@ -78,6 +78,13 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="12dp"
                 android:text="@string/editar" />
+            <Button
+                android:id="@+id/btnEliminarCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="12dp"
+                android:text="@string/borrar" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

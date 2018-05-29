@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.AdaptadorDeCliente
@@ -18,11 +19,17 @@ import java.util.*
  * Fragmento que contiene la Lista de Clientes
  * @author caflorezvi
  */
-class ListaDeClientesFragment : Fragment(), AdaptadorDeCliente.OnClickAdaptadorDeCliente, AgregarClienteFragment.ClienteCreado {
-
-    override fun onClienteCreadoListener(cliente: Cliente) {
+class ListaDeClientesFragment : Fragment(), AdaptadorDeCliente.OnClickAdaptadorDeCliente, AgregarClienteFragment.ClienteCreado, ManagerFireBase.ActualizarAdaptadorCliente {
+    override fun onActualizarAdaptador(cliente: Cliente) {
         lista.add(0, cliente)
         adaptador.notifyItemInserted(0)
+    }
+
+
+    lateinit var managerFB : ManagerFireBase
+
+    override fun onClienteCreadoListener(cliente: Cliente) {
+        managerFB!!.insertarCliente(cliente)
     }
 
     /**
@@ -50,6 +57,13 @@ class ListaDeClientesFragment : Fragment(), AdaptadorDeCliente.OnClickAdaptadorD
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        //intancia serviciolistener
+        ManagerFireBase.instanciar(this)
+        managerFB = ManagerFireBase.instant!!
+        managerFB.listenerCliente =  this
+        managerFB.escucharFireBaseCliente()
+        //adapter
+
         adaptador = AdaptadorDeCliente(this, lista)
         listaClientes.adapter = adaptador
         listaClientes.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -70,14 +84,10 @@ class ListaDeClientesFragment : Fragment(), AdaptadorDeCliente.OnClickAdaptadorD
         when(item?.itemId){
 
             R.id.menu_agregar -> {
-
                 var dialogo = AgregarClienteFragment()
                 dialogo.listener = this
                 dialogo.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogoTitulo)
                 dialogo.show(fragmentManager, "AgregarCliente")
-
-                //lista.add(0, Cliente("Ayudante de Santa", Date()))
-                //adaptador.notifyItemInserted(0)
             }
 
 

@@ -47,13 +47,12 @@ class AgregarClienteFragment : DialogFragment(), View.OnClickListener, Calendari
             val nombre:String = vista.cliente_agregar_nombre.text.toString()
             val cedula:String = vista.cliente_agregar_cedula.text.toString()
             val email:String = vista.cliente_agregar_email.text.toString()
-            val tipo:String = vista.cliente_agregar_tipo.text.toString()
             val dependencia:String = vista.cliente_agregar_dependencia.text.toString()
             val telefono:String = vista.cliente_agregar_telefono.text.toString()
 
 
-            if( !nombre.isEmpty() && !cedula.isEmpty() && !tipo.isEmpty() && !email.isEmpty() && !dependencia.isEmpty() && !telefono.isEmpty() ){
-                listener.onClienteCreadoListener(Cliente(nombre,cedula,tipo,email,dependencia,telefono, ""))
+            if( !nombre.isEmpty() && !cedula.isEmpty() && !email.isEmpty() && !dependencia.isEmpty() && !telefono.isEmpty() ){
+                listener.onClienteCreadoListener(Cliente(nombre,cedula,"cli",email,dependencia,telefono, ""))
                 dismiss()
             }
 

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/degradado">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
         <EditText
-            android:id="@+id/cliente_agregar_nombre"
+            android:id="@+id/cliente_editar_nombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/nombre"/>
@@ -19,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <EditText
-            android:id="@+id/cliente_agregar_cedula"
+            android:id="@+id/cliente_editar_cedula"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/cedula"/>
@@ -31,7 +30,7 @@
         android:layout_height="50dp">
 
         <EditText
-            android:id="@+id/cliente_agregar_email"
+            android:id="@+id/cliente_editar_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/mail"/>
@@ -43,7 +42,7 @@
         android:layout_height="50dp">
 
         <EditText
-            android:id="@+id/cliente_agregar_dependencia"
+            android:id="@+id/cliente_editar_dependencia"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/dependencia"/>
@@ -54,7 +53,7 @@
         android:layout_height="50dp">
 
         <EditText
-            android:id="@+id/cliente_agregar_telefono"
+            android:id="@+id/cliente_editar_telefono"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/telefono"/>
@@ -62,9 +61,9 @@
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/agregar_cliente"
+        android:id="@+id/btn_editar_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/guardar"/>
+        android:text="@string/editar"/>
 
 </LinearLayout>

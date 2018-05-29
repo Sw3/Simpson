@@ -8,8 +8,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 import co.edu.uniquindio.android.electiva.proyecto.R
+import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.ClientesActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Cliente.EditarClienteActivity
+import co.edu.uniquindio.android.electiva.proyecto.activity.Encargado.EditarEncargado
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
 import kotlinx.android.synthetic.main.fragment_detalle_de_cliente.*
 
@@ -20,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_detalle_de_cliente.*
 class DetalleDeClienteFragment : Fragment(), View.OnClickListener {
 
     lateinit var cliente:Cliente
+    lateinit var managerFB : ManagerFireBase
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -31,8 +35,17 @@ class DetalleDeClienteFragment : Fragment(), View.OnClickListener {
      * Escucha el evento del click del botón y hace un intent a youtube
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hP3fmnMuZZU"))
-        startActivity(intent)
+        if(v?.id == btnIrAVideo.id){
+            val intent= Intent(this.context, EditarClienteActivity::class.java)
+            intent.putExtra("cliente", cliente)
+            startActivity(intent)
+        }else{
+            managerFB = ManagerFireBase.instant!!
+            managerFB.borrarCliente(cliente)
+
+            var intent = Intent(this.context, ClientesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     /**
@@ -47,6 +60,7 @@ class DetalleDeClienteFragment : Fragment(), View.OnClickListener {
         cliente_detalle_tipo.text =getString(R.string.tipo)+": "+ cliente.tipo
         cliente_detalle_telefono.text =getString(R.string.telefono)+": "+ cliente.telefono
         btnIrAVideo.setOnClickListener(this)
+        btnEliminarCliente.setOnClickListener(this)
     }
 
 }

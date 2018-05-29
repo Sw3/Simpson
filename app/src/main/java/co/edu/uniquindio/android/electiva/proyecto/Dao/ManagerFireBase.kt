@@ -53,6 +53,11 @@ object ManagerFireBase {
     }
 
     //editores
+
+    fun editarCliente(cliente: Cliente) {
+        dataRef!!.child("cliente").child(cliente.id.toString()).setValue(cliente)
+    }
+
     fun editarSolicitud(solicitud: Solicitud) {
         dataRef!!.child("solicitud").child(solicitud.id.toString()).setValue(solicitud)
     }
@@ -74,6 +79,9 @@ object ManagerFireBase {
 
     fun borrarSolicitud(solicitud: Solicitud) {
         dataRef!!.child("solicitud").child(solicitud.id).removeValue()
+    }
+    fun borrarCliente(cliente: Cliente) {
+        dataRef!!.child("cliente").child(cliente.id).removeValue()
     }
 
 
@@ -105,7 +113,6 @@ object ManagerFireBase {
             override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
                 Log.v("ManagerFire", "onChildChanged")
             }
-
             override fun onChildAdded(p0: DataSnapshot?, p1: String?) {
                 val cliente: Cliente =
                         p0!!.getValue(Cliente::class.java)!!
@@ -158,7 +165,6 @@ object ManagerFireBase {
             }
         })
     }
-
 
     //Interfaces de escucha
     interface ActualizarAdaptadorServicio {
