@@ -23,19 +23,26 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase
 
 
 
-    override fun onClick(p0: View?) {
-        clientes.forEach{
-            if(it.email == email.text.toString() && it.cedula == password.text.toString()){
-                Sesion.instanciar(it)
-                if(it.tipo == "cli"){
-                    var intent = Intent(this, CliBienvenidoActivity::class.java)
-                    startActivity(intent)
-                }else{
-                    var intent = Intent(this, AdmBienvenidoActivity::class.java)
-                    startActivity(intent)
+    override fun onClick(v: View?) {
+        if(v?.id == registrarse.id){
+            var intent = Intent(this, RegistrarseActivity::class.java)
+            startActivity(intent)
+        }
+        else{
+            clientes.forEach{
+                if(it.email == email.text.toString() && it.cedula == password.text.toString()){
+                    Sesion.instanciar(it)
+                    if(it.tipo == "cli"){
+                        var intent = Intent(this, CliBienvenidoActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        var intent = Intent(this, AdmBienvenidoActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             }
         }
+
     }
 
     fun crearCliente(){
@@ -54,6 +61,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase
         managerFB.escucharFireBaseCliente()
         Sesion.clienteSesion = null
         email_sign_in_button.setOnClickListener(this)
+        registrarse.setOnClickListener(this)
 
     }
 }
