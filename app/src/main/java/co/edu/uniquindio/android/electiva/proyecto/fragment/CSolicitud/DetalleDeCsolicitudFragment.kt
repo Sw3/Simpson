@@ -1,6 +1,8 @@
 package co.edu.uniquindio.android.electiva.proyecto.fragment.CSolicitud
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -11,11 +13,15 @@ import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.activity.CSolicitud.CSolicitudsActivity
 import co.edu.uniquindio.android.electiva.proyecto.vo.Csolicitud
+import com.facebook.login.LoginManager
+import com.facebook.share.model.ShareHashtag
+import com.facebook.share.model.ShareLinkContent
 import com.facebook.share.widget.ShareDialog
 import com.twitter.sdk.android.core.*
 import com.twitter.sdk.android.tweetcomposer.TweetComposer
 import kotlinx.android.synthetic.main.fragment_detalle_de_csolicitud.*
 import java.net.URL
+import java.util.*
 
 /**
  * Fragmento que muestra el detalle de un csolicitud
@@ -78,13 +84,38 @@ class DetalleDeCsolicitudFragment : Fragment(), View.OnClickListener {
                 e.printStackTrace()
             }
         }
+        if(v?.id == login_button.id){
+           // LoginManager.getInstance().logInWithReadPermissions(this,
+             //       Arrays.asList("public_profile", "user_friends"))
+            if (ShareDialog.canShow(ShareLinkContent::class.java)) {
+                val content = ShareLinkContent.Builder()
+                        .setContentUrl(Uri.parse("https://www.youtube.com/watch?v=Zq8_XppDXdk"))
+                        .setQuote("Personajes")
+                        .setShareHashtag(ShareHashtag.Builder()
+                                .setHashtag("#Personajes")
+                                .build()).build()
+                shareDialog.show(content)
+            }
+        }
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        //twitter code
         twitterLoginButton.onActivityResult(requestCode, resultCode, data)
+
+        //facebook code
+        if (resultCode == Activity.RESULT_OK) {
+            val bundle = data!!.extras
+            val fbData = bundle!!.toString()
+            Log.e("MENSAJE", "I am inside resultcode $fbData")
+        } else {
+            Log.e("MENSAJE", "I have no idea what is happening :( " +
+                    data!!.extras!!.toString())
+        }
     }
+
 
     /**
      * Obtiene los atributos de un csolicitud y los muestra en la pantalla
