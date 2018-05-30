@@ -21,7 +21,9 @@ import co.edu.uniquindio.android.electiva.proyecto.activity.Solicitud.Solicituds
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CSolicitud.DetalleDeCsolicitudFragment
 import co.edu.uniquindio.android.electiva.proyecto.fragment.CSolicitud.ListaDeCSolicitudsFragment
 import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
+import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Csolicitud
+import com.facebook.CallbackManager
 import kotlinx.android.synthetic.main.activity_encargado.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -34,6 +36,7 @@ class CSolicitudsActivity : AppCompatActivity(), ListaDeCSolicitudsFragment.OnCS
 
     lateinit var lista:ArrayList<Csolicitud>
     var fragment:Fragment? = null
+
 
     /**
      * Método que devuelve la posición que se seleccionó en el recyclerview

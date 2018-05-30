@@ -8,19 +8,27 @@ import android.view.View
 import co.edu.uniquindio.android.electiva.proyecto.Dao.ManagerFireBase
 import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
+import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
 import com.facebook.internal.Utility.arrayList
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
 import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase.ActualizarAdaptadorCliente {
+
+
     override fun onActualizarAdaptador(cliente: Cliente) {
         clientes.add(cliente)
     }
 
     lateinit var clientes : ArrayList<Cliente>
     lateinit var managerFB : ManagerFireBase
-
+    lateinit var callbackManager: CallbackManager
 
 
     override fun onClick(v: View?) {
@@ -62,6 +70,21 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase
         Sesion.clienteSesion = null
         email_sign_in_button.setOnClickListener(this)
         registrarse.setOnClickListener(this)
-
+        //Twitter
+        Utilidades.inicializarTwitter(this)
+        //Facebook
+        callbackManager = CallbackManager.Factory.create()
+        LoginManager.getInstance().registerCallback( callbackManager ,
+                object : FacebookCallback<LoginResult> {
+                    override fun onSuccess (loginResult: LoginResult) {
+                        // App code
+                    }
+                    override fun onCancel () {
+                        // App code
+                    }
+                    override fun onError (exception: FacebookException) {
+                        // App code
+                    }
+                })
     }
 }

@@ -18,9 +18,17 @@ import java.security.NoSuchAlgorithmException
 
 
 class Utilidades {
-
     companion object {
 
+        fun inicializarTwitter(context: Context){
+            val conf: TwitterConfig = TwitterConfig.Builder(context)
+                    .logger(DefaultLogger(Log.DEBUG))
+                    .twitterAuthConfig(TwitterAuthConfig(
+                            context.resources.getString(R.string.com_twitter_sdk_android_CONSUMER_KEY),
+                            context.resources.getString(R.string.com_twitter_sdk_android_CONSUMER_SECRET)))
+                    .debug(true).build()
+            Twitter.initialize(conf)
+        }
 
         fun getKeyHash(context: Context) {
             try {
@@ -48,13 +56,5 @@ class Utilidades {
         }
     }
 
-    fun inicializarTwitter(context: Context){
-        val conf: TwitterConfig = TwitterConfig.Builder(context)
-                .logger(DefaultLogger(Log.DEBUG))
-                .twitterAuthConfig(TwitterAuthConfig(
-                        context.resources.getString(R.string.com_twitter_sdk_android_CONSUMER_KEY),
-                        context.resources.getString(R.string.com_twitter_sdk_android_CONSUMER_SECRET)))
-                .debug(true).build()
-        Twitter.initialize(conf)
-    }
+
 }
