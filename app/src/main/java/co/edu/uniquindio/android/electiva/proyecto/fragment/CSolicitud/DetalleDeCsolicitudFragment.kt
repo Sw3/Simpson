@@ -124,6 +124,7 @@ class DetalleDeCsolicitudFragment : Fragment(), View.OnClickListener {
         this.csolicitud = csolicitud
         csolicitud_detalle_titulo.text = csolicitud.servicio
         btnIrAVideo.setOnClickListener(this)
+        login_button.setOnClickListener(this)
     }
 
 }
