@@ -10,6 +10,7 @@ import co.edu.uniquindio.android.electiva.proyecto.R
 import co.edu.uniquindio.android.electiva.proyecto.util.Sesion
 import co.edu.uniquindio.android.electiva.proyecto.util.Utilidades
 import co.edu.uniquindio.android.electiva.proyecto.vo.Cliente
+import co.edu.uniquindio.android.electiva.proyecto.vo.Servicio
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -19,14 +20,17 @@ import com.facebook.login.LoginResult
 import kotlinx.android.synthetic.main.activity_login.*
 
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase.ActualizarAdaptadorCliente {
+class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase.ActualizarAdaptadorCliente, ManagerFireBase.ActualizarAdaptadorServicio {
+    override fun onActualizarAdaptador(servicio: Servicio) {
+        Sesion.addServicio(servicio)
+    }
 
 
     override fun onActualizarAdaptador(cliente: Cliente) {
-        clientes.add(cliente)
+        Sesion.addCliente(cliente)
     }
 
-    lateinit var clientes : ArrayList<Cliente>
+
     lateinit var managerFB : ManagerFireBase
     lateinit var callbackManager: CallbackManager
 
@@ -37,9 +41,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase
             startActivity(intent)
         }
         else{
-            clientes.forEach{
+            Sesion.clientes.forEach{
                 if(it.email == email.text.toString() && it.cedula == password.text.toString()){
                     Sesion.instanciar(it)
+                    //inicia escuchadores
                     if(it.tipo == "cli"){
                         var intent = Intent(this, CliBienvenidoActivity::class.java)
                         startActivity(intent)
@@ -50,23 +55,19 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ManagerFireBase
                 }
             }
         }
-
-    }
-
-    fun crearCliente(){
-        managerFB.insertarCliente(Cliente("usr2", "123", "adm", "1@1.com","ing","123",""))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        clientes = arrayList()
         ManagerFireBase.instanciar(Fragment())
         managerFB = ManagerFireBase.instant!!
         //crearCliente()
         managerFB.listenerCliente = this
+        managerFB.listenerServicio = this
         managerFB.escucharFireBaseCliente()
+        managerFB.escucharFireBaseServicio()
         Sesion.clienteSesion = null
         email_sign_in_button.setOnClickListener(this)
         registrarse.setOnClickListener(this)

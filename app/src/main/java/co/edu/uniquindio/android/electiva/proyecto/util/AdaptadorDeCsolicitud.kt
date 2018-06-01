@@ -49,7 +49,7 @@ class AdaptadorDeCsolicitud(var csolicituds:ArrayList<Csolicitud>) : RecyclerVie
         }
 
         fun bindCSolicitud(csolicitud:Csolicitud){
-            nombre.text = csolicitud.servicio
+            nombre.text = Sesion.buscarServicio(csolicitud.servicio)
             fechaNacimiento.text = csolicitud.fecha.toString()
         }
     }

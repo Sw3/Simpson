@@ -54,10 +54,12 @@ class AdaptadorDeSolicitud(var solicituds:ArrayList<Solicitud>) : RecyclerView.A
         fun bindSolicitud(solicitud:Solicitud){
 
            // fecha.text = solicitud.fecha.toString()
-            usuario.text = solicitud.solicitante
-            servicio.text = solicitud.servicio
+            usuario.text = Sesion.buscarUsuario(solicitud.solicitante)
+            servicio.text = Sesion.buscarServicio(solicitud.servicio)
         }
+
     }
+
 
     /**
      * Interface que sirve como listener para los eventos de click del recyclerview
